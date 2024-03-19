@@ -1,6 +1,6 @@
 # Web Trường Sinh
 ## Setup file để code
-Trong 1 trang nên có tối thiếu 1 file *.js* để có thể lấy được data từ file *Data/SanPhamData.js*  
+Trong 1 trang nên có tối thiếu 1 file *.js* để có thể lấy được data từ file *Data*  
 Cấu trúc file sẽ bao gồm 1 file *.html*, với 1 file *.js* (có thể có thêm 1 file *.css*)  
 **KHÔNG** được sửa file *Data* vì data sẽ dùng chung cho các trang  
 
