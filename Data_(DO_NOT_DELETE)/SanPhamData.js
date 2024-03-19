@@ -5,7 +5,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/BigOne.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/BigOne.png'
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/Kenee.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/Kenee.png'
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/Lucky.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/Lucky.png'
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/MasterLite.png',
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/MasterLite.png',
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/Ruby.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/Ruby.png'
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/VigenLite.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/VigenLite.png'
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/Viogen.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/Viogen.png'
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/ViogenNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ViogenNộiThất.png'
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/ViogenNgoạiThất.png' 
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ViogenNgoạiThất.png' 
     },
     {
         id: 10,
@@ -77,7 +77,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/RubyNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/RubyNộiThất.png'
     },
     {
         id: 11,
@@ -85,7 +85,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/RubyNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/RubyNgoạiThất.png'
     },
     {
         id: 12,
@@ -93,7 +93,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/BigOneNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/BigOneNộiThất.png'
     }
     ,
     {
@@ -102,7 +102,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/BigOneNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/BigOneNgoạiThất.png'
     },
     {
         id: 14,
@@ -110,7 +110,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/VigenLiteNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/VigenLiteNộiThất.png'
     },
     {
         id: 15,
@@ -118,7 +118,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/VigenLiteNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/VigenLiteNgoạiThất.png'
     },
     {
         id: 16,
@@ -126,7 +126,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/MasterLiteNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/MasterLiteNộiThất.png'
     },
     {
         id: 17,
@@ -134,7 +134,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/MasterLiteNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/MasterLiteNgoạiThất.png'
     },
     {
         id: 18,
@@ -142,7 +142,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/KeneeNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/KeneeNộiThất.png'
     },
     {
         id: 19,
@@ -150,7 +150,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/KeneeNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/KeneeNgoạiThất.png'
     },
     {
         id: 20,
@@ -158,7 +158,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/LuckyNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/LuckyNộiThất.png'
     },
     {
         id: 21,
@@ -166,7 +166,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/LuckyNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/LuckyNgoạiThất.png'
     },
     {
         id: 22,
@@ -174,7 +174,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/GoldNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/GoldNộiThất.png'
     },
     {
         id: 23,
@@ -182,7 +182,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/GoldNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/GoldNgoạiThất.png'
     },
     {
         id: 24,
@@ -190,7 +190,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/SimonNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/SimonNộiThất.png'
     },
     {
         id: 25,
@@ -198,7 +198,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/SimonNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/SimonNgoạiThất.png'
     },
     {
         id: 26,
@@ -206,7 +206,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/OgenNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/OgenNộiThất.png'
     },
     {
         id: 27,
@@ -214,7 +214,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/OgenNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/OgenNgoạiThất.png'
     },
     {
         id: 28,
@@ -222,7 +222,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/DantonNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/DantonNộiThất.png'
     },
     {
         id: 29,
@@ -230,7 +230,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/DantonNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/DantonNgoạiThất.png'
     },
     {
         id: 30,
@@ -238,7 +238,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/NanofaNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/NanofaNộiThất.png'
     },
     {
         id: 31,
@@ -246,7 +246,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/NanofaNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/NanofaNgoạiThất.png'
     },
     {
         id: 32,
@@ -254,7 +254,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/FostarNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/FostarNộiThất.png'
     },
     {
         id: 33,
@@ -262,7 +262,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/FostarNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/FostarNgoạiThất.png'
     },
     {
         id: 34,
@@ -270,7 +270,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/MasterNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/MasterNộiThất.png'
     },
     {
         id: 35,
@@ -278,7 +278,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/MasterNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/MasterNgoạiThất.png'
     },
     {
         id: 36,
@@ -286,7 +286,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/ValtexNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ValtexNộiThất.png'
     },
     {
         id: 37,
@@ -294,7 +294,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/ValtexNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ValtexNgoạiThất.png'
     },
     {
         id: 38,
@@ -302,7 +302,7 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/VigenNộiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/VigenNộiThất.png'
     },
     {
         id: 39,
@@ -310,6 +310,6 @@ var SanPhamData = [
         gia: 50000,
         baoHanh: '',
         loai: 'bot tret tuong',
-        hinhAnh: '../../Data/Image/VigenNgoạiThất.png'
+        hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/VigenNgoạiThất.png'
     }
 ]
