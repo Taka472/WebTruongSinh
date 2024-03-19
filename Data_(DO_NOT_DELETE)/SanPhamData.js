@@ -59,7 +59,7 @@ var SanPhamData = [
         id: 8,
         ten: 'Viogen Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '6 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ViogenNộiThất.png'
     },
@@ -67,7 +67,7 @@ var SanPhamData = [
         id: 9,
         ten: 'Viogen Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ViogenNgoạiThất.png' 
     },
@@ -156,7 +156,7 @@ var SanPhamData = [
         id: 20,
         ten: 'Lucky Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '5 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/LuckyNộiThất.png'
     },
@@ -164,7 +164,7 @@ var SanPhamData = [
         id: 21,
         ten: 'Lucky Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '3 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/LuckyNgoạiThất.png'
     },
@@ -172,7 +172,7 @@ var SanPhamData = [
         id: 22,
         ten: 'Gold Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/GoldNộiThất.png'
     },
@@ -180,7 +180,7 @@ var SanPhamData = [
         id: 23,
         ten: 'Gold Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '2 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/GoldNgoạiThất.png'
     },
@@ -188,7 +188,7 @@ var SanPhamData = [
         id: 24,
         ten: 'Simon Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/SimonNộiThất.png'
     },
@@ -196,7 +196,7 @@ var SanPhamData = [
         id: 25,
         ten: 'Simon Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '2 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/SimonNgoạiThất.png'
     },
@@ -204,7 +204,7 @@ var SanPhamData = [
         id: 26,
         ten: 'Ogen Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/OgenNộiThất.png'
     },
@@ -212,7 +212,7 @@ var SanPhamData = [
         id: 27,
         ten: 'Ogen Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '2 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/OgenNgoạiThất.png'
     },
@@ -220,7 +220,7 @@ var SanPhamData = [
         id: 28,
         ten: 'Danton Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/DantonNộiThất.png'
     },
@@ -228,7 +228,7 @@ var SanPhamData = [
         id: 29,
         ten: 'Danton Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '2 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/DantonNgoạiThất.png'
     },
@@ -268,7 +268,7 @@ var SanPhamData = [
         id: 34,
         ten: 'Master Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/MasterNộiThất.png'
     },
@@ -276,7 +276,7 @@ var SanPhamData = [
         id: 35,
         ten: 'Master Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '2 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/MasterNgoạiThất.png'
     },
@@ -284,7 +284,7 @@ var SanPhamData = [
         id: 36,
         ten: 'Valtex Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ValtexNộiThất.png'
     },
@@ -292,7 +292,7 @@ var SanPhamData = [
         id: 37,
         ten: 'Valtex Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '2 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/ValtexNgoạiThất.png'
     },
@@ -300,7 +300,7 @@ var SanPhamData = [
         id: 38,
         ten: 'Vigen Nội Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '4 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/VigenNộiThất.png'
     },
@@ -308,8 +308,24 @@ var SanPhamData = [
         id: 39,
         ten: 'Vigen Ngoại Thất',
         gia: 50000,
-        baoHanh: '',
+        baoHanh: '2 năm',
         loai: 'bot tret tuong',
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/VigenNgoạiThất.png'
+    },
+    {
+        id: 40,
+        ten: 'Emperor Nội Thất',
+        gia: '',
+        baoHanh: '7 năm',
+        loai: '',
+        hinhAnh: '',
+    },
+    {
+        id: 41,
+        ten: 'Emperor Ngoại Thất',
+        gia: '',
+        baoHanh: '5 năm',
+        loai: '',
+        hinhAnh: '',
     }
 ]
