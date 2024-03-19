@@ -13,7 +13,7 @@ Các thông tin đó bao gồm:
 - Công trình tiêu biểu
 - Google Map  
 
-Khi code các trang này, phải lấy data từ file *Data/SanPhamData.js* để hiển thị lên màn hình *(sử dụng js để truy cập đến data)*  
+Khi code các trang này, phải lấy data từ file *Data* để hiển thị lên màn hình *(sử dụng js để truy cập đến data)*  
 Google Map thì có thể lên trang Google Map để lấy về đoạn code nhúng để đem vào file *.html*
 
 ## Cách để sử dụng được data từ file *Data*
