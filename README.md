@@ -7,6 +7,7 @@ Cấu trúc file sẽ bao gồm 1 file *.html*, với 1 file *.js* (có thể c�
 ## Lưu ý khi code  
 Trên các trang sẽ có các thông tin liên quan đến Data  
 Các thông tin đó bao gồm:  
+- Thông tin công ty
 - Sản phẩm *(trong sản phẩm đã có sẵn thông tin bảo hành)*
 - Chứng nhận
 - Tin tức
@@ -24,7 +25,7 @@ Khi đó khi qua bên file *.js* của trang có thể gọi được data *(dat
 ![](Data_(DO_NOT_DELETE)/Image/DemoCode2.png)
 
 ## Thông tin về các file *Data*
-Trong các file Data sẽ chứa 1 mảng các Object  
+Trong các file Data sẽ chứa 1 mảng các Object *(trừ CongTyData.js)*  
 Các Object sẽ chứa thông tin của một đối tượng  
 Để lấy ra từng Object, có thể chạy vòng *for* hoặc dùng *forEach*  
 Còn nếu muốn lấy một thông tin cụ thể trong các Object, có thể dùng cú pháp *<Tên Object>.<Tên Trường>*
