@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* //////// HEADER //////// */
+
+header {
+    background-color: #00b4fc;
+    color: #ff0000;
+    padding-top: 30px;
+    text-align: center;
+}
+header h1 {
+    font-size: 24px; /* Kích thước mặc định cho tất cả các tiêu đề h1 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Hiệu ứng bóng */
+}
+
+header h1.larger {
+    font-size: 60px; /* Kích thước cho tiêu đề h1 có class "larger" */
+}
+
+header div {
+    background-color: #ff0000;
+    height: 50px;
+}
+nav {
+    background-color: #ff0000; /* Màu nền của menu */
+    display: flex; /* Sử dụng flexbox */
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; /* Canh giữa theo chiều dọc */
+    height: 100%; /* Đặt chiều cao của menu bằng 100% của phần tử cha (thẻ div) */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    /*margin-right: 30x; /*khoảng cách giữa các nút trong menu*/
+    border-right: 1px solid #fff; /* Thêm đường viền bên phải */
+    padding-right: 25px; /* Khoảng cách giữa các nút */
+    padding-left: 25px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Loại bỏ margin-right cho mục cuối cùng */
+    border-right: none; /* Loại bỏ đường viền của mục cuối cùng */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* //////// FOOTER //////// */
+footer {
+    background-color: #00b4fc;
+    color: #fff;
+    padding: 60px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer div {
+    overflow: hidden; /* Clear float */
+   
+
+}
+
+.div1 {
+    float: left; /* Thẻ div sẽ nằm bên trái */
+    width: 50%; /* Chiều rộng của thẻ div1 */
+}
+
+.div2 {
+    float: right; /* Thẻ div sẽ nằm bên phải */
+    width: 50%; /* Chiều rộng của thẻ div2 */
+}
