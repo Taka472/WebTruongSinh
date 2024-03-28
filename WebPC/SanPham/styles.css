@@ -25,6 +25,7 @@ header div {
     background-color: #ff0000;
     height: 50px;
 }
+
 nav {
     background-color: #ff0000; /* Màu nền của menu */
     display: flex; /* Sử dụng flexbox */
@@ -60,6 +61,41 @@ nav ul li a {
 
 nav ul li a:hover {
     text-decoration: underline;
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-images img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
 }
 
 /* //////// FOOTER //////// */
