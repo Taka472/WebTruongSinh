@@ -56,41 +56,30 @@ body {
 .infoBox {
     margin-top: 50px;
     height: 300px;
-    width: 25%;
+    width: 100%;
     border-radius: 20px;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;}
+    align-items: center;
+}
 
 #firstBox {
     background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
 }
 
-#secondBox {
-    background: linear-gradient(to right, #00FFD1 0%, #00C2FF 100%);
-}
-
-#thirdBox {
-    background: linear-gradient(to right, #FF820E 0%, #f8e57b 100%);
-}
 
 #firstImage {
     width: 400px;
     object-fit: contain;
 }
 
-#thirdImage {
-    width: 300px;
-    object-fit: contain;
-}
 
 .boxTitle {
     font-size: 30px;
     font-weight: bolder;
     font-family: Inter;
-    margin-bottom: 40px;
+    margin: 20px 0 40px; /* Shorter notation for margin */
     text-align: center;
-    margin-top: 20px;
 }
 
 .boxDescription {
@@ -98,21 +87,7 @@ body {
     font-family: Inter;
 }
 
-#firstCer {
-    width: 225px;
-    object-fit: contain;
-}
 
-#secondCer {
-    width: 225px;
-    object-fit: contain;
-}
-
-#secondBoxImage {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
 
 #logo {
     width: 80%;
@@ -149,4 +124,27 @@ body {
 
 li + li {
     margin-top: 10px;
+}
+
+.col-3{
+    flex:0 0 auto;
+    width:28%;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    --bs-gutter-x:1.5rem;
+    --bs-gutter-y:0;
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:calc(-1 * var(--bs-gutter-y));
+    margin-right:calc(-.5 * var(--bs-gutter-x));
+    margin-left:calc(-.5 * var(--bs-gutter-x))
+}
+.gx-4{
+    --bs-gutter-x:1.5rem;
 }
