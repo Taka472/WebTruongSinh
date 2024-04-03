@@ -1,9 +1,6 @@
 document.getElementById("title").src = HeaderData[0].hinhAnh
 document.getElementById("scrollpane").src = HeaderData[1].hinhAnh
 
-document.getElementById("firstCer").src = ChungNhanData[0].hinhAnh
-document.getElementById("secondCer").src = ChungNhanData[1].hinhAnh
-
 document.getElementById("footerTitle").innerText = CongTyData.ten
 document.getElementById("infoDisplay").innerHTML += "<li>Trụ sở: " + CongTyData.diaChi;
 document.getElementById("infoDisplay").innerHTML += "<li>Chi nhánh: " + CongTyData.chiNhanh;
