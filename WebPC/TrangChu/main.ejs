@@ -8,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
 <body>
-    <img class="header" id="title">
+    <img class="header" id="title" src= <%= data.imageSrc[0] %>>
     <div id="button">
         <span id="first">Trang chủ</span>
         <span>Sản phẩm</span>
@@ -18,9 +18,9 @@
         <span>Công trình tiêu biểu</span>
         <span id="last">Tin tức</span>
     </div>
-    <img class="header" id="scrollpane">
+    <img class="header" id="scrollpane" src="public/ScrollPanel.png">
     <div class="infoBox" id="firstBox">
-        <img src="../../Data_(DO_NOT_DELETE)/Image/First.png" id="firstImage">
+        <img src="public/First.png" id="firstImage">
         <div class="desciption">
             <div class="boxTitle">Nguồn nguyên liệu tự nhiên</div>
             <span class="boxDescription">
@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="infoBox" id="thirdBox">
-        <img src="../../Data_(DO_NOT_DELETE)/Image/Third.png" id="thirdImage">
+        <img src="public/Third.png" id="thirdImage">
         <div class="description">
             <div class="boxTitle">Chế độ bảo hành lâu dài</div>
             <span class="boxDescription">
@@ -59,12 +59,18 @@
         </div>
     </div>
     <div id="logoContainer">
-        <img src="../../Data_(DO_NOT_DELETE)/Image/Logos.png" id="logo">
+        <img src="public/Logos.png" id="logo">
     </div>
     <div id="footer">
         <div id="companyInfo">
-            <span id="footerTitle"></span>
-            <ul id="infoDisplay"></ul>
+            <span id="footerTitle"><%= data.result[0]['recordset'][0].ten %></span>
+            <ul id="infoDisplay">
+                <li>Trụ sở: <%= data.result[0]['recordset'][0].diaChi %></li>
+                <li>Chi nhánh: <%= data.result[0]['recordset'][0].chiNhanh %></li>
+                <li>Tel: <%= data.result[0]['recordset'][0].sdt1 %> - <%= data.result[0]['recordset'][0].sdt2 %> Hotline: <%= data.result[0]['recordset'][0].hotline %></li>
+                <li>Giấy phép kinh doanh số: <%= data.result[0]['recordset'][0].giayPhepKinhDoanh %></li>
+                <li>Copyright 2018 © Bản quyền thuộc về Công ty</li>
+            </ul>
         </div>
         <div id="navigation">
             <span id="navTitle">Tra cứu</span>
@@ -80,8 +86,3 @@
     </div>
 </body>
 </html>
-
-<script src="../../Data_(DO_NOT_DELETE)/ChungNhanData.js"></script>
-<script src="../../Data_(DO_NOT_DELETE)/CongTyData.js"></script>
-<script src="../../Data_(DO_NOT_DELETE)/HeaderData.js"></script>
-<script src="scripts.js"></script>

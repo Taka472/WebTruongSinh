@@ -3,7 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; */
-
+    margin: 0px;
     min-width:992px!important
 
 }
@@ -67,9 +67,8 @@ body {
     width: 100%;
     border-radius: 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-left: 3.5rem;
 }
 
 #firstBox {
@@ -94,6 +93,7 @@ body {
 .boxDescription {
     font-size: 23px;
     font-family: Inter;
+    padding: 0px;
 }
 
 .text-center{
