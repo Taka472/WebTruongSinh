@@ -1,9 +1,17 @@
 body {
-    margin: 0px;
+    /* margin: 0px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
+
+    min-width:992px!important
+
 }
+.container{
+    min-width:992px!important
+}
+
+
 
 .header {
     display: block;
@@ -61,6 +69,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    padding-left: 3.5rem;
 }
 
 #firstBox {
@@ -75,7 +84,7 @@ body {
 
 
 .boxTitle {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bolder;
     font-family: Inter;
     margin: 20px 0 40px; /* Shorter notation for margin */
@@ -83,11 +92,13 @@ body {
 }
 
 .boxDescription {
-    font-size: 25px;
+    font-size: 23px;
     font-family: Inter;
 }
 
-
+.text-center{
+    text-align:center!important
+}
 
 #logo {
     width: 80%;
@@ -127,9 +138,18 @@ li + li {
 }
 
 .col-3{
-    flex:0 0 auto;
-    width:28%;
+    -ms-flex:0 0 25%;
+    flex:0 0 25%;
+    max-width:25%
 }
+.col-8{
+    -ms-flex:0 0 66.666667%;
+    flex:0 0 66.666667%;
+    max-width:66.666667%
+}
+/* .pd-left{
+    margin-left: 5rem;
+} */
 .description {
     display: flex;
     flex-direction: column;
@@ -137,14 +157,30 @@ li + li {
 }
 
 .row{
-    --bs-gutter-x:1.5rem;
-    --bs-gutter-y:0;
+    display:-ms-flexbox;
     display:flex;
+    -ms-flex-wrap:wrap;
     flex-wrap:wrap;
-    margin-top:calc(-1 * var(--bs-gutter-y));
-    margin-right:calc(-.5 * var(--bs-gutter-x));
-    margin-left:calc(-.5 * var(--bs-gutter-x))
+    margin-right:-15px;
+    margin-left:-15px
 }
-.gx-4{
-    --bs-gutter-x:1.5rem;
+
+.justify-content-around{
+    -ms-flex-pack:distribute!important;
+    justify-content:space-around!important
+}
+.img-thumbnail{
+    padding:.25rem;
+
+    border-radius:.25rem;
+    max-width:70%;
+    height:auto
+}
+
+.col{
+    -ms-flex-preferred-size:0;
+    flex-basis:0;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    max-width:100%
 }
