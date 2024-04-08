@@ -151,3 +151,7 @@ th {
     display: block;
     margin: auto;
 }
+
+.carousel-control-prev, .carousel-control-next {
+    border: 0px;
+}
