@@ -8,14 +8,15 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
 </head>
 <body>
-    <img class="header" id="title" src= <%= data.imageSrc[0] %>>
+    <img src="public/Chatbox.png" id="chatbox">
+    <img class="header" id="title">
     <div id="button">
         <span id="first">Trang chủ</span>
-        <span>Sản phẩm</span>
-        <span>Chứng nhận</span>
-        <span>Bảo hành</span>
-        <span>Hướng dẫn sử dụng</span>
-        <span>Công trình tiêu biểu</span>
+        <span id="sanPham">Sản phẩm</span>
+        <span id="chungNhan">Chứng nhận</span>
+        <span id="baoHanh">Bảo hành</span>
+        <span id="huongDanSuDung">Hướng dẫn sử dụng</span>
+        <span id="congTrinhTieuBieu">Công trình tiêu biểu</span>
         <span id="last">Tin tức</span>
     </div>
     <img class="header" id="scrollpane" src="public/ScrollPanel.png">
@@ -63,13 +64,8 @@
     </div>
     <div id="footer">
         <div id="companyInfo">
-            <span id="footerTitle"><%= data.result[0]['recordset'][0].ten %></span>
+            <span id="footerTitle"></span>
             <ul id="infoDisplay">
-                <li>Trụ sở: <%= data.result[0]['recordset'][0].diaChi %></li>
-                <li>Chi nhánh: <%= data.result[0]['recordset'][0].chiNhanh %></li>
-                <li>Tel: <%= data.result[0]['recordset'][0].sdt1 %> - <%= data.result[0]['recordset'][0].sdt2 %> Hotline: <%= data.result[0]['recordset'][0].hotline %></li>
-                <li>Giấy phép kinh doanh số: <%= data.result[0]['recordset'][0].giayPhepKinhDoanh %></li>
-                <li>Copyright 2018 © Bản quyền thuộc về Công ty</li>
             </ul>
         </div>
         <div id="navigation">
@@ -86,3 +82,5 @@
     </div>
 </body>
 </html>
+
+<script src="scripts.js"></script>
