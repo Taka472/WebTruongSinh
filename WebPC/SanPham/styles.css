@@ -224,3 +224,25 @@ li + li {
     flex-grow:1;
     max-width:100%
 }
+
+/* (Tùy chọn) CSS để tùy chỉnh giao diện sản phẩm */
+.product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-card h3 {
+    margin: 5px 0;
+}
+
+.product-card p {
+    margin: 5px 0;
+}

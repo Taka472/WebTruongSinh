@@ -31,7 +31,7 @@ const products = [
     new Product(8 ,'Viogen Nội Thất'        , 50000, '6 năm', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/ViogenNộiThất.png'),
     new Product(9 ,'Viogen Ngoại Thất'      , 50000, '4 năm', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/ViogenNgoạiThất.png'),
     new Product(10 ,'Ruby Nội Thất'         , 50000, '', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/RubyNộiThất.png'),
-new Product(11 ,'Ruby Ngoại Thất'           , 50000, '', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/RubyNgoạiThất.png'),
+    new Product(11 ,'Ruby Ngoại Thất'       , 50000, '', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/RubyNgoạiThất.png'),
     new Product(12 ,'Big One Nội Thất'      , 50000, '', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/BigOneNộiThất.png'),
     new Product(13 ,'Big One Ngoại Thất'    , 50000, '', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/BigOneNgoạiThất.png'),
     new Product(14 ,'Vigen Lite Nội Thất'   , 50000, '', 'bot tret tuong', '../../Data_(DO_NOT_DELETE)/Image/VigenLiteNộiThất.png'),
@@ -65,3 +65,38 @@ new Product(11 ,'Ruby Ngoại Thất'           , 50000, '', 'bot tret tuong', '
     new Product(41 ,'Emperor Ngoại Thất', '', '5 năm', '', ''),
 ];
 
+
+// đọc data
+document.addEventListener("DOMContentLoaded", function() {
+    const products = [ /* Danh sách sản phẩm */ ];
+
+    const productList = document.getElementById("product-list");
+
+    // Lặp qua từng sản phẩm và tạo HTML để hiển thị
+    products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+
+        const productImage = document.createElement("img");
+        productImage.src = product.hinhAnh;
+        productImage.alt = product.ten;
+
+        const productName = document.createElement("h3");
+        productName.textContent = product.ten;
+
+        const productPrice = document.createElement("p");
+        productPrice.textContent = "Giá: " + product.gia;
+
+        const productWarranty = document.createElement("p");
+        productWarranty.textContent = "Bảo hành: " + product.baoHanh;
+
+        // Thêm các phần tử vào sản phẩm
+        productCard.appendChild(productImage);
+        productCard.appendChild(productName);
+        productCard.appendChild(productPrice);
+        productCard.appendChild(productWarranty);
+
+        // Thêm sản phẩm vào danh sách
+        productList.appendChild(productCard);
+    });
+});
