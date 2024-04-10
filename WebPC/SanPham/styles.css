@@ -1,126 +1,226 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* //////// HEADER //////// */
-
-header {
-    background-color: #00b4fc;
-    color: #ff0000;
-    padding-top: 30px;
-    text-align: center;
-}
-header h1 {
-    font-size: 24px; /* Kích thước mặc định cho tất cả các tiêu đề h1 */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Hiệu ứng bóng */
-}
-
-header h1.larger {
-    font-size: 60px; /* Kích thước cho tiêu đề h1 có class "larger" */
-}
-
-header div {
-    background-color: #ff0000;
-    height: 50px;
-}
-
-nav {
-    background-color: #ff0000; /* Màu nền của menu */
-    display: flex; /* Sử dụng flexbox */
-    justify-content: center; /* Canh giữa theo chiều ngang */
-    align-items: center; /* Canh giữa theo chiều dọc */
-    height: 100%; /* Đặt chiều cao của menu bằng 100% của phần tử cha (thẻ div) */
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    /*margin-right: 30x; /*khoảng cách giữa các nút trong menu*/
-    border-right: 1px solid #fff; /* Thêm đường viền bên phải */
-    padding-right: 25px; /* Khoảng cách giữa các nút */
-    padding-left: 25px;
-}
-
-nav ul li:last-child {
-    margin-right: 0; /* Loại bỏ margin-right cho mục cuối cùng */
-    border-right: none; /* Loại bỏ đường viền của mục cuối cùng */
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.slider-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.slider-images {
+    margin: 0px;
     display: flex;
-    transition: transform 0.5s ease;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    min-width:992px!important
 }
 
-.slider-images img {
+
+
+.header {
+    display: block;
     width: 100%;
-    height: auto;
+    object-fit: contain;
+    margin: 0px;
 }
 
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+#button {
+    width: 100%;
+    height: 55px;
+    background-color: #D70000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
-.prev {
-    left: 0;
+#button > span {
+    font-size: 18px;
+    color: white;
+    font-family: Inter;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-right: white solid 1px;
+    border-left: white solid 1px;
 }
 
-.next {
-    right: 0;
+#button > #first {
+    font-size: 18px;
+    color: #00C2FF;
+    font-family: Inter;
+    font-weight: bold;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-right: white solid 1px;
+    border-left: white solid 2px;
 }
 
-/* //////// FOOTER //////// */
-footer {
-    background-color: #00b4fc;
-    color: #fff;
-    padding: 60px;
+#button > #last {
+    font-size: 18px;
+    color: white;
+    font-family: Inter;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-right: white solid 2px;
+    border-left: white solid 1px;
+}
+
+.infoBox {
+    margin-top: 50px;
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3.5rem;
+}
+
+#firstBox {
+    background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
+    margin-top: 50px;
+    height: 300px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 3.5rem;
+    background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
+}
+
+
+#firstImage {
+    width: 400px;
+    object-fit: contain;
+}
+
+
+.boxTitle {
+    font-size: 28px;
+    font-weight: bolder;
+    font-family: Inter;
+    margin: 20px 0 40px; /* Shorter notation for margin */
     text-align: center;
-    position: fixed;
-    bottom: 0;
+}
+
+.boxDescription {
+    font-size: 23px;
+    font-family: Inter;
+
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+.searchContainer {
+    display: flex;
+    align-items: center;
+}
+
+.searchContainer i {
+    margin-right: 10px;
+}
+#searchInput {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+    transform: translate(-4px, -4px), rotate(315deg);
+
+}
+
+#cartButton {
+    width: 300px;
+    height: 40px;
+    background-color: #D70000;
+    color: white;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+#cartButton i {
+    margin-right: 5px;
+}
+
+.text-center{
+    text-align:center!important
+}
+
+#logo {
+    width: 80%;
+    object-fit: contain;
+}
+
+#logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    border-top: black solid 1px;
+}
+
+#footer {
+    height: 300px;
     width: 100%;
+    background-color: #00C2FF;
+    color: white;
+    font-weight: bold;
+    font-family: Inter;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
 }
 
-footer div {
-    overflow: hidden; 
-   
+#navigation {
+    margin-right: 300px;
+    margin-left: 30px;
+}
+
+li + li {
+    margin-top: 10px;   
+}
+
+.col-3{
+    -ms-flex:0 0 25%;
+    flex:0 0 25%;
+    max-width:25%
+}
+.col-8{
+    -ms-flex:0 0 66.666667%;
+    flex:0 0 66.666667%;
+    max-width:66.666667%
+}
+/* .pd-left{
+    margin-left: 5rem;
+} */
+.description {  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-center;
 
 }
 
-.div1 {
-    float: left; /* Thẻ div sẽ nằm bên trái */
-    width: 50%; /* Chiều rộng của thẻ div1 */
+.row{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex-wrap:wrap;
+    flex-wrap:wrap;
+    margin-right:-15px;
+    margin-left:-15px
 }
 
-.div2 {
-    float: right; /* Thẻ div sẽ nằm bên phải */
-    width: 50%; /* Chiều rộng của thẻ div2 */
+.justify-content-around{
+    -ms-flex-pack:distribute!important;
+    justify-content:space-around!important
+}
+.img-thumbnail{
+    padding:.25rem;
+
+    border-radius:.25rem;
+    max-width:70%;
+    height:auto
+}
+
+.col{
+    -ms-flex-preferred-size:0;
+    flex-basis:0;
+    -ms-flex-positive:1;
+    flex-grow:1;
+    max-width:100%
 }
