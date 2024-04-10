@@ -3,14 +3,6 @@ let HeaderData, CongTyData, ChungNhanData;
 const apiURL = 'http://localhost:3001'
 const serverURL = 'http://localhost:3000'
 
-var SanPham = document.getElementById('sanPham')
-var ChungNhan = document.getElementById('chungNhan')
-var BaoHanh = document.getElementById('baoHanh')
-var HuongDanSuDung = document.getElementById('huongDanSuDung')
-var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
-var TinTuc = document.getElementById('last')
-var LienHe = document.getElementById('chatbox')
-
 const makeAPICall = async() => {
     try {
         await fetch(apiURL + '/TrangChu/getHeaderData', {mode: 'cors'})
@@ -19,10 +11,6 @@ const makeAPICall = async() => {
             HeaderData = data
             return HeaderData
         })
-        // .then(() => {
-        //     HeaderData[0].hinhAnh = Buffer.from(HeaderData[0].hinhAnh, 'base64')
-        //     return HeaderData
-        // })
         .then (() => {
             console.log(serverURL + HeaderData[1].hinhAnh);
             document.getElementById("title").src = serverURL + HeaderData[0].hinhAnh
@@ -77,6 +65,14 @@ const fetchChungNhanData = async() => {
 makeAPICall()
 fecthCongTyData()
 fetchChungNhanData()
+
+var SanPham = document.getElementById('sanPham')
+var ChungNhan = document.getElementById('chungNhan')
+var BaoHanh = document.getElementById('baoHanh')
+var HuongDanSuDung = document.getElementById('huongDanSuDung')
+var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
+var TinTuc = document.getElementById('last')
+var LienHe = document.getElementById('chatbox')
 
 SanPham.onclick = function() {
     window.location = '/SanPham'

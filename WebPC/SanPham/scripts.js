@@ -9,7 +9,6 @@ document.getElementById("infoDisplay").innerHTML += "<li>Giấy phép kinh doanh
 document.getElementById("infoDisplay").innerHTML += "<li>Copyright 2018 © Bản quyền thuộc về Công ty"
 
 
-
 document.addEventListener("DOMContentLoaded", function() {
     const productList = document.getElementById("product-list");
 
