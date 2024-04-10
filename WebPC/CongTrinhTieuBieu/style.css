@@ -170,11 +170,12 @@ li + li {
     justify-content:space-around!important
 }
 .img-thumbnail{
-    padding:.25rem;
-
+    
+    transition: 0.5s;
     border-radius:.25rem;
-    max-width:70%;
-    height:auto
+    max-width:80%;
+    height:auto;
+    
 }
 
 .col{
@@ -183,4 +184,32 @@ li + li {
     -ms-flex-positive:1;
     flex-grow:1;
     max-width:100%
+}
+.list{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    column-gap: 20px;
+}
+.item {
+    height:200px;
+    transition: 0.5s;
+    padding:.15rem;
+    margin-bottom:8rem;
+}
+
+.listPage{
+    padding:10px;
+    text-align: center;
+    list-style: none;
+}
+.listPage li{
+    background-color: #ffffffBD;
+    padding:20px;
+    display: inline-block;
+    margin:0 10px;
+    cursor: pointer;
+}
+.listPage .active{
+    background-color: #B192EF;
+    color:#fff;
 }
