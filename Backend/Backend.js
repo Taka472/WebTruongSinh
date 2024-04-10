@@ -49,7 +49,21 @@ app.get('/getChungNhanData', (req, res) => {
             })
         }
     })
-}) 
+})
+
+app.get('/getCongTrinhTieuBieu', (req, res) => {
+    sql.connect(config, function(err) {
+        if (err) console.log(err)
+        else {
+            new sql.Request().query('select * from CongTrinhTieuBieu', (err, result) => {
+                if (err) console.log(err)
+                else {
+                    res.send(result.recordset)
+                }
+            })
+        }
+    })
+})
 
 app.listen(port, () => {
     console.log('App listening at port ' + port);
