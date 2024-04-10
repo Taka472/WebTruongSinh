@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "express": "^4.19.2",
-    "http-server": "^14.1.1",
-    "mssql": "^10.0.2",
-    "twilio": "^5.0.1"
-  }
-}
