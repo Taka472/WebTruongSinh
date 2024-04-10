@@ -172,7 +172,7 @@ li + li {
 .img-thumbnail{
     
     transition: 0.5s;
-    border-radius:.25rem;
+    border-radius:20px;
     max-width:80%;
     height:auto;
     
@@ -194,13 +194,14 @@ li + li {
     height:200px;
     transition: 0.5s;
     padding:.15rem;
-    margin-bottom:8rem;
+    margin-bottom:5rem;
 }
 
 .listPage{
     padding:10px;
     text-align: center;
     list-style: none;
+    
 }
 .listPage li{
     background-color: #ffffffBD;
@@ -208,6 +209,7 @@ li + li {
     display: inline-block;
     margin:0 10px;
     cursor: pointer;
+    border: black;
 }
 .listPage .active{
     background-color: #B192EF;
