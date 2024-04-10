@@ -4,11 +4,6 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.container{
-    min-width:992px!important
-}
-
-
 
 .header {
     display: block;
@@ -27,7 +22,7 @@ body {
     justify-content: center;
 }
 
-#button > span {
+#button > span, a {
     font-size: 18px;
     color: white;
     font-family: Inter;
@@ -35,6 +30,11 @@ body {
     padding-left: 40px;
     border-right: white solid 1px;
     border-left: white solid 1px;
+}
+
+#button > a:hover {
+    color: white;
+    text-decoration: underline;
 }
 
 #button > #first {
@@ -60,14 +60,14 @@ body {
 
 .infoBox {
     margin-top: 50px;
-    height: 300px;
-    width: 100%;
+    height: 363px;
+    width: 80%;
     border-radius: 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
-    padding-left: 3.5rem;
 }
+
 
 #firstBox {
     background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
@@ -131,6 +131,7 @@ body {
     cursor: pointer;
     margin-bottom: 10px;
 }
+
 #cartButton i {
     margin-right: 5px;
 }
@@ -245,4 +246,40 @@ li + li {
 
 .product-card p {
     margin: 5px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+}
+
+/* Style cho nút prev và next */
+#pagination-buttons {
+    margin-top: 20px;
+}
+
+#prevBtn,
+#nextBtn {
+    margin-right: 10px;
+}
+
+/* CSS để tùy chỉnh nút thêm vào giỏ hàng */
+.add-to-cart-button {
+    background-color: #4CAF50; /* Màu xanh lá */
+    color: white; /* Màu chữ trắng */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Hover effect */
+.add-to-cart-button:hover {
+    background-color: #45a049; /* Màu xanh lá nhạt */
 }
