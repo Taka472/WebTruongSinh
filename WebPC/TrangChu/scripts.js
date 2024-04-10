@@ -1,4 +1,7 @@
-let HeaderData, CongTyData;
+let HeaderData, CongTyData, ChungNhanData;
+
+const apiURL = 'http://localhost:3001'
+const serverURL = 'http://localhost:3000'
 
 var SanPham = document.getElementById('sanPham')
 var ChungNhan = document.getElementById('chungNhan')
@@ -10,7 +13,7 @@ var LienHe = document.getElementById('chatbox')
 
 const makeAPICall = async() => {
     try {
-        await fetch('http://localhost:3001/TrangChu/getData', {mode: 'cors'})
+        await fetch(apiURL + '/TrangChu/getHeaderData', {mode: 'cors'})
         .then(response => response.json())
         .then(data => {
             HeaderData = data
@@ -21,7 +24,9 @@ const makeAPICall = async() => {
         //     return HeaderData
         // })
         .then (() => {
-            document.getElementById("title").src = HeaderData[0].hinhAnh
+            console.log(serverURL + HeaderData[1].hinhAnh);
+            document.getElementById("title").src = serverURL + HeaderData[0].hinhAnh
+            document.getElementById("scrollpane").src = serverURL + HeaderData[1].hinhAnh;
         })
         .catch(error => console.error('Error:', error));
 
@@ -32,7 +37,7 @@ const makeAPICall = async() => {
 
 const fecthCongTyData = async() => {
     try {
-        await fetch('http://localhost:3001/getCongTyData', {mode: 'cors'})
+        await fetch(apiURL + '/getCongTyData', {mode: 'cors'})
         .then(response => response.json())
         .then(data => {
             CongTyData = data;
@@ -52,8 +57,26 @@ const fecthCongTyData = async() => {
     }
 }
 
+const fetchChungNhanData = async() => {
+    try {
+        await fetch(apiURL + '/getChungNhanData', {mode: 'cors'})
+        .then (response => response.json())
+        .then(data => {
+            ChungNhanData = data;
+            return ChungNhanData;
+        })
+        .then (() => {
+            document.getElementById('firstCer').src = ChungNhanData[0].hinhAnh;
+            document.getElementById('secondCer').src = ChungNhanData[1].hinhAnh;
+        })
+    } catch (e) {
+        console.log(e);
+    }
+}
+
 makeAPICall()
 fecthCongTyData()
+fetchChungNhanData()
 
 SanPham.onclick = function() {
     window.location = '/SanPham'

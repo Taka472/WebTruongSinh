@@ -9,7 +9,7 @@ const port = 3001;
 
 app.use(cors())
 
-app.get('/TrangChu/getData', (req, res) => {
+app.get('/TrangChu/getHeaderData', (req, res) => {
     sql.connect(config, function(err) {
         if (err) console.log(err);
         else {
@@ -36,6 +36,20 @@ app.get('/getCongTyData', (req, res) => {
         }
     })
 })
+
+app.get('/getChungNhanData', (req, res) => {
+    sql.connect(config, function(err) {
+        if (err) console.log(err);
+        else {
+            new sql.Request().query('select * from ChungNhanData', (err, result) => {
+                if (err) console.log(err);
+                else {
+                    res.send(result.recordset);
+                }
+            })
+        }
+    })
+}) 
 
 app.listen(port, () => {
     console.log('App listening at port ' + port);
