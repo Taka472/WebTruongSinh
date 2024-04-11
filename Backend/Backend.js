@@ -25,7 +25,7 @@ const authenticateJWT = (req, res, next) => {
     }
 }
 
-app.get('/api/TrangChu/getHeaderData', (req, res) => {
+app.get('/api/getHeaderData', (req, res) => {
     sql.connect(config, function(err) {
         if (err) console.log(err);
         else {
