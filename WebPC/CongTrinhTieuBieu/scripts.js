@@ -1,8 +1,8 @@
 let thisPage = 1;
 let limit = 6;
-let list = document.querySelectorAll('.list .item');
 
 function loadItem(){
+    let list = document.querySelectorAll('.list .item'); // Update list here
     let beginGet = limit * (thisPage - 1);
     let endGet = limit * thisPage - 1;
     list.forEach((item, key)=>{
@@ -11,11 +11,12 @@ function loadItem(){
         }else{
             item.style.display = 'none';
         }
-    })
+    });
     listPage();
 }
-loadItem();
+
 function listPage(){
+    let list = document.querySelectorAll('.list .item'); // Update list here
     let count = Math.ceil(list.length / limit);
     document.querySelector('.listPage').innerHTML = '';
 
@@ -43,11 +44,68 @@ function listPage(){
         document.querySelector('.listPage').appendChild(next);
     }
 }
+
 function changePage(i){
     thisPage = i;
     loadItem();
 }
 
+function displayCongTrinhTieuBieu() {
+    var gallery = document.getElementById('gallery');
+
+    CongTrinhTieuBieu.forEach(congTrinh => {
+        var itemDiv = document.createElement('div');
+        itemDiv.className = 'item';
+
+        var imgElement = document.createElement('img');
+        imgElement.src = congTrinh.hinhAnh;
+        imgElement.alt = 'Công trình tiêu biểu'; 
+        imgElement.className = 'img-thumbnail';
+
+        itemDiv.appendChild(imgElement); // Thêm img vào div.item
+        gallery.appendChild(itemDiv); // Thêm div.item vào div#gallery
+    });
+    loadItem();
+}
+
+displayCongTrinhTieuBieu();
+
+
+// var SanPham = document.getElementById('sanPham')
+// var ChungNhan = document.getElementById('chungNhan')
+// var BaoHanh = document.getElementById('baoHanh')
+// var HuongDanSuDung = document.getElementById('huongDanSuDung')
+// var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
+// var TinTuc = document.getElementById('last')
+// var LienHe = document.getElementById('chatbox')
+
+// SanPham.onclick = function() {
+//     window.location = '/SanPham'
+// }
+
+// BaoHanh.onclick = function() {
+//     window.location = '/BaoHanh'
+// }
+
+// ChungNhan.onclick = function() {
+//     window.location = '/ChungNhan'
+// }
+
+// HuongDanSuDung.onclick = function() {
+//     window.location = '/HuongDanSuDung'
+// }
+
+// CongTrinhTieuBieu.onclick = function() {
+//     window.location = '/CongTrinhTieuBieu'
+// }
+
+// TinTuc.onclick = function() {
+//     window.location = '/TinTuc'
+// }
+
+// LienHe.onclick = function() {
+//     window.location = '/LienHe'
+// }
 
 document.getElementById("title").src = HeaderData[0].hinhAnh
 document.getElementById("scrollpane").src = HeaderData[1].hinhAnh

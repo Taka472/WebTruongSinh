@@ -154,6 +154,10 @@ li + li {
     transition: 0.5s;
     padding:.15rem;
     margin-bottom:5rem;
+    transition: 0.5s;
+    border-radius:20px;
+    max-width:80%;
+    height:auto;
 }
 
 .listPage{
