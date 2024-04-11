@@ -122,11 +122,17 @@ app.get('/api/getTinTucData', (req, res) => {
 })
 
 app.put('/api/putForm', (req, res) => {
-    console.log(req.body)
     sql.connect(config, function(err) {
         if (err) console.log(err)
         else {
-            new sql.Request().query("insert into FormCuaNguoiDung values ()", (err) => {
+            request = new sql.Request();
+            // request.input('name', sql.NVarChar(40), req.body.hoTen)
+            // request.input('diaChi', sql.NVarChar(100), req.body.diaChi)
+            // request.input('sdt', sql.VarChar(10), req.body.sdt)
+            // request.input('email', sql.VarChar(30), req.body.email)
+            // request.input('chuDe', sql.NVarChar(30), req.body.chuDe)
+            // request.input('noiDung', sql.NVarChar(200), req.body.noiDung)
+            request.query("insert into FormCuaNguoiDung (hoTen, diaChi, sdt, email, chuDe, noiDung) values (N'" + req.body.hoTen + "', N'" + req.body.diaChi + "', '" + req.body.sdt + "', '" + req.body.email + "', N'" + req.body.chuDe + "', N'" + req.body.noiDung + "')", (err) => {
                 if (err) {
                     console.log(err)
                     res.status(500).send(err)
