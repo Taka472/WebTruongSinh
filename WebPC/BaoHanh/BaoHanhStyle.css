@@ -139,3 +139,48 @@ th, td {
     padding: 8px;
     text-align: center;
 }
+
+.carousel-control-prev, .carousel-control-next {
+    border: 0px;
+}
+
+#sanPham:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#trangChu:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#huongDanSuDung:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#chungNhan:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#first:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#last:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#congTrinhTieuBieu:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#chatbox {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+}
