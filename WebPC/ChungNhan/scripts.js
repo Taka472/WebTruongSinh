@@ -69,49 +69,62 @@ function createPaginationButtons() {
 createPaginationButtons();
 
 //Tự động lấy dữ liệu cho trang hiện tại
-function fillTable(page) {
+async function fillTable(page) {
     const tableBody = document.querySelector('#certiTable tbody');
     tableBody.innerHTML = '';
 
-    const startIndex = (page - 1) * imagesPerPage;
-    const endIndex = Math.min(startIndex + imagesPerPage, ChungNhanData.length);
+    try {
+        const response = await fetch(apiURL + '/getChungNhanData', {mode: 'cors'})
+        .then (response => response.json())
+        .then(data => {
+            ChungNhanData = data;
+            return ChungNhanData;
+        })
+        .then (() => {
+            const startIndex = (page - 1) * imagesPerPage;
+            const endIndex = Math.min(startIndex + imagesPerPage, totalImages);
 
-    for (let i = startIndex; i < endIndex; i++) {
-        if (i % 3 === 0) {
-            var row = document.createElement('tr');
-            tableBody.appendChild(row);
+            ChungNhanData.forEach((item, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    if (index % 3 === 0) {
+                        var row = document.createElement('tr');
+                        tableBody.appendChild(row);
+                    }
+
+                    var cell = document.createElement('td');
+                    var image = document.createElement('img');
+                    image.src = item.hinhAnh;
+                    image.classList.add('certi');
+                    cell.appendChild(image);
+
+                    var tenParagraph = document.createElement('p');
+                    tenParagraph.textContent = item.ten;
+                    cell.appendChild(tenParagraph);
+
+                    row.appendChild(cell);
+                }
+            });
+        })
+
+        var pageItem = $(".pagination li").not(".prev,.next");
+        var prev = $(".pagination li.prev");
+        var next = $(".pagination li.next");
+
+        if (page === 1) {
+            prev.hide();
+            next.show();
+        } else if (page === totalPages) {
+            next.hide();
+            prev.show();
+        } else {
+            $(".pagination li").show();
         }
 
-        var cell = document.createElement('td');
-        var image = document.createElement('img');
-        image.src = ChungNhanData[i].hinhAnh;
-        image.classList.add('certi');
-        cell.appendChild(image);
-
-        var tenParagraph = document.createElement('p');
-        tenParagraph.textContent = ChungNhanData[i].ten;
-        cell.appendChild(tenParagraph);
-
-        row.appendChild(cell);
+        pageItem.removeClass('active');
+        pageItem.eq(page - 1).addClass('active');
+    } catch (e) {
+        console.log(e);
     }
-    
-    var pageItem = $(".pagination li").not(".prev,.next");
-    var prev = $(".pagination li.prev");
-    var next = $(".pagination li.next");
-
-    if(page == 1) {
-        prev.hide();
-        next.show();
-    } 
-    else if(page == pageItem.length) {
-        next.hide();
-        prev.show();
-    }
-    else {
-        $(".pagination li").show();
-    }
-
-    pageItem.eq(page - 1).addClass('active');
 }
 
 //Tự động lấy dữ liệu chứng nhận cho trang tương ứng
@@ -127,21 +140,94 @@ function previousPage() {
     currentPage--;
     fillTable(currentPage); 
 }
-//Điều hướng sang trang bất kỳs
+//Điều hướng sang trang bất kỳ
 function goToPage(pageNumber) {
     currentPage = pageNumber; 
     fillTable(currentPage);
 }
 
-document.getElementById("title").src = HeaderData[0].hinhAnh
-document.getElementById("scrollpane").src = HeaderData[1].hinhAnh
+//Header, Footer
+let HeaderData, CongTyData;
 
-document.getElementById("firstCer").src = ChungNhanData[0].hinhAnh
-document.getElementById("secondCer").src = ChungNhanData[1].hinhAnh
+const apiURL = 'http://localhost:3001'
+const serverURL = 'http://localhost:3000'
 
-document.getElementById("footerTitle").innerText = CongTyData.ten
-document.getElementById("infoDisplay").innerHTML += "<li>Trụ sở: " + CongTyData.diaChi;
-document.getElementById("infoDisplay").innerHTML += "<li>Chi nhánh: " + CongTyData.chiNhanh;
-document.getElementById("infoDisplay").innerHTML += "<li>Tel: " + CongTyData.sdt[0] + " - " + CongTyData.sdt[1] + " Hotline: " + CongTyData.hotline;
-document.getElementById("infoDisplay").innerHTML += "<li>Giấy phép kinh doanh số: " + CongTyData.giayPhepKinhDoanh;
-document.getElementById("infoDisplay").innerHTML += "<li>Copyright 2018 © Bản quyền thuộc về Công ty"
+const makeAPICall = async() => {
+    try {
+        await fetch(apiURL + '/TrangChu/getHeaderData', {mode: 'cors'})
+        .then(response => response.json())
+        .then(data => {
+            HeaderData = data
+            return HeaderData
+        })
+        .then (() => {
+            document.getElementById("title").src = serverURL + HeaderData[0].hinhAnh
+            document.getElementById("scrollpane").src = serverURL + HeaderData[1].hinhAnh;
+        })
+        .catch(error => console.error('Error:', error));
+
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+const fecthCongTyData = async() => {
+    try {
+        await fetch(apiURL + '/getCongTyData', {mode: 'cors'})
+        .then(response => response.json())
+        .then(data => {
+            CongTyData = data;
+            return CongTyData
+        })
+        .then (() => {
+            document.getElementById("footerTitle").innerText = CongTyData[0].ten
+            document.getElementById("infoDisplay").innerHTML += "<li>Trụ sở: " + CongTyData[0].diaChi;
+            document.getElementById("infoDisplay").innerHTML += "<li>Chi nhánh: " + CongTyData[0].chiNhanh;
+            document.getElementById("infoDisplay").innerHTML += "<li>Tel: " + CongTyData[0].sdt1 + " - " + CongTyData[0].sdt2 + " Hotline: " + CongTyData[0].hotline;
+            document.getElementById("infoDisplay").innerHTML += "<li>Giấy phép kinh doanh số: " + CongTyData[0].giayPhepKinhDoanh;
+            document.getElementById("infoDisplay").innerHTML += "<li>Copyright 2018 © Bản quyền thuộc về Công ty"
+        })
+        .catch(error => console.error('Error:', error));
+    } catch(e) {
+        console.log(e);
+    }
+}
+
+makeAPICall()
+fecthCongTyData()
+
+var SanPham = document.getElementById('sanPham')
+var TrangChu = document.getElementById('trangChu')
+var BaoHanh = document.getElementById('baoHanh')
+var HuongDanSuDung = document.getElementById('huongDanSuDung')
+var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
+var TinTuc = document.getElementById('last')
+var LienHe = document.getElementById('chatbox')
+
+SanPham.onclick = function() {
+    window.location = '/SanPham'
+}
+
+BaoHanh.onclick = function() {
+    window.location = '/BaoHanh'
+}
+
+TrangChu.onclick = function() {
+    window.location = '/TrangChu'
+}
+
+HuongDanSuDung.onclick = function() {
+    window.location = '/HuongDanSuDung'
+}
+
+CongTrinhTieuBieu.onclick = function() {
+    window.location = '/CongTrinhTieuBieu'
+}
+
+TinTuc.onclick = function() {
+    window.location = '/TinTuc'
+}
+
+LienHe.onclick = function() {
+    window.location = '/LienHe'
+}
