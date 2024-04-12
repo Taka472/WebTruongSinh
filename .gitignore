@@ -1,2 +1,4 @@
 #ignore node modules file
 node_modules
+*.mdf
+*.ndf
