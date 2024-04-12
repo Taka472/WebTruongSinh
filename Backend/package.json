@@ -3,6 +3,8 @@
     "cors": "^2.8.5",
     "ejs": "^3.1.9",
     "express": "^4.19.2",
+    "express-oauth-jwt": "^2.0.2",
+    "express-rate-limit": "^7.2.0",
     "mssql": "^10.0.2"
   }
 }
