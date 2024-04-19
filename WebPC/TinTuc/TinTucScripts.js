@@ -1,6 +1,8 @@
 let thisPage = 1;
 let limit = 6;
 
+let TinTucData;
+
 function loadItem(){
     let list = document.querySelectorAll('.list .item'); // Update list here
     let beginGet = limit * (thisPage - 1);
@@ -53,18 +55,29 @@ function changePage(i){
 function displayCongTrinhTieuBieu() {
     var gallery = document.getElementById('gallery');
 
-    CongTrinhTieuBieu.forEach(congTrinh => {
-        var itemDiv = document.createElement('div');
-        itemDiv.className = 'item';
+    // Lặp qua mỗi thông tin tuyển dụng trong mảng TinTucData
+    TinTucData.forEach(function(tinTuyenDung) {
+        // Tạo một phần tử div để chứa thông tin tuyển dụng
+        var tinTuyenDungElement = document.createElement('div');
+        tinTuyenDungElement.classList.add('tin-tuyen-dung');
 
-        var imgElement = document.createElement('img');
-        imgElement.src = congTrinh.hinhAnh;
-        imgElement.alt = 'Công trình tiêu biểu'; 
-        imgElement.className = 'img-thumbnail';
+        // Tạo các phần tử HTML để hiển thị thông tin tuyển dụng
+        var hinhAnhElement = document.createElement('img');
+        hinhAnhElement.src = tinTuyenDung.hinhAnh;
+        tinTuyenDungElement.appendChild(hinhAnhElement);
 
-        itemDiv.appendChild(imgElement); // Thêm img vào div.item
-        gallery.appendChild(itemDiv); // Thêm div.item vào div#gallery
+        var tieuDeElement = document.createElement('h2');
+        tieuDeElement.textContent = tinTuyenDung.tieuDe;
+        tinTuyenDungElement.appendChild(tieuDeElement);
+
+        var nhanDeElement = document.createElement('p');
+        nhanDeElement.textContent = tinTuyenDung.nhanDe;
+        tinTuyenDungElement.appendChild(nhanDeElement);
+
+        // Thêm phần tử tinTuyenDungElement vào vùng chứa danh sách thông tin tuyển dụng
+        document.getElementById('tuyenDungList').appendChild(tinTuyenDungElement);
     });
+
     loadItem();
 }
 

@@ -3,8 +3,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; */
+
+    min-width:992px!important;
     margin: 0px;
-    min-width:992px!important
 
 }
 .container{
@@ -20,16 +21,56 @@ body {
     margin: 0px;
 }
 
+#button {
+    width: 100%;
+    height: 55px;
+    background-color: #D70000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
+#button > span {
+    font-size: 18px;
+    color: white;
+    font-family: Inter;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-right: white solid 1px;
+    border-left: white solid 1px;
+}
+
+#button > #first {
+    font-size: 18px;
+    color: #00C2FF;
+    font-family: Inter;
+    font-weight: bold;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-right: white solid 1px;
+    border-left: white solid 2px;
+}
+
+#button > #last {
+    font-size: 18px;
+    color: white;
+    font-family: Inter;
+    padding-right: 40px;
+    padding-left: 40px;
+    border-right: white solid 2px;
+    border-left: white solid 1px;
+}
 
 .infoBox {
     margin-top: 50px;
-    height: 250px;
-    width: 90%;
+    height: 300px;
+    width: 100%;
     border-radius: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding-left: 3.5rem;
 }
 
 #firstBox {
@@ -44,7 +85,7 @@ body {
 
 
 .boxTitle {
-    font-size: 20px;
+    font-size: 28px;
     font-weight: bolder;
     font-family: Inter;
     margin: 20px 0 40px; /* Shorter notation for margin */
@@ -52,9 +93,8 @@ body {
 }
 
 .boxDescription {
-    font-size: 18px;
+    font-size: 23px;
     font-family: Inter;
-    padding: 0px;
 }
 
 .text-center{
@@ -82,7 +122,6 @@ body {
     font-weight: bold;
     font-family: Inter;
     font-size: 20px;
-    font-size: 1.3vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -109,7 +148,9 @@ li + li {
     flex:0 0 66.666667%;
     max-width:66.666667%
 }
-
+/* .pd-left{
+    margin-left: 5rem;
+} */
 .description {
     display: flex;
     flex-direction: column;
@@ -130,12 +171,11 @@ li + li {
     justify-content:space-around!important
 }
 .img-thumbnail{
-    
-    transition: 0.5s;
-    border-radius:20px;
-    max-width:80%;
-    height:auto;
-    
+    padding:.25rem;
+
+    border-radius:.25rem;
+    max-width:70%;
+    height:auto
 }
 
 .col{
@@ -144,85 +184,4 @@ li + li {
     -ms-flex-positive:1;
     flex-grow:1;
     max-width:100%
-}
-.list{
-    display: grid;
-    grid-template-columns: 300px 300px 300px;
-    column-gap: 20px;
-}
-.item {
-    height:200px;
-    transition: 0.5s;
-    padding:.15rem;
-    margin-bottom:5rem;
-    transition: 0.5s;
-    border-radius:20px;
-    max-width:80%;
-    height:auto;
-}
-
-.listPage{
-    padding:10px;
-    text-align: center;
-    list-style: none;
-    
-}
-.listPage li{
-    background-color: #ffffffBD;
-    padding:20px;
-    display: inline-block;
-    margin:0 10px;
-    cursor: pointer;
-    border: black;
-}
-.listPage .active{
-    background-color: #B192EF;
-    color:#fff;
-}
-
-#button {
-    width: 100%;
-    height: 55px;
-    background-color: #D70000;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-#button > #first {
-    font-size: 18px;
-    font-size: 1.1vw;
-    font-family: Inter;
-    padding-right: 40px;
-    padding-left: 40px;
-    border-right: white solid 1px;
-    border-left: white solid 2px;
-}
-
-#button > #last {
-    font-size: 18px;
-    font-size: 1.1vw;
-    color: white;
-    font-family: Inter;
-    padding-right: 40px;
-    padding-left: 40px;
-    border-right: white solid 2px;
-    border-left: white solid 1px;
-}
-
-#button > span, a {
-    font-size: 18px;
-    font-size: 1.1vw;
-    color: white;
-    font-family: Inter;
-    padding-right: 40px;
-    padding-left: 40px;
-    border-right: white solid 1px;
-    border-left: white solid 1px;
-}
-
-#button > #congTrinhTieuBieu {
-    font-weight: bold;
-    color: #00C2FF;
 }

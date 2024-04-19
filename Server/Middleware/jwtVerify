@@ -1,0 +1,16 @@
+const jwt = require('jsonwebtoken');
+const secretKey = 'f8cdb04495ded47615258f9dc6a3f4707fd2405434fefc3cbf4ef4e6';
+
+function verifyToken(req, res, next) {
+    const token = req.header('Authorization')
+    if (!token) res.status(401).json({ message: "Access denied" })
+    else try {
+        const decoded = jwt.verify(token, secretKey)
+        req.username = decoded.username
+        next()
+    } catch (err) {
+        res.status(401).json({ message: 'Invalid token' })
+    }
+}
+
+module.exports = verifyToken

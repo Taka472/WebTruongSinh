@@ -193,7 +193,9 @@ li + li {
 #button > #first {
     font-size: 18px;
     font-size: 1.1vw;
+    color: #00C2FF;
     font-family: Inter;
+    font-weight: bold;
     padding-right: 40px;
     padding-left: 40px;
     border-right: white solid 1px;
@@ -222,7 +224,37 @@ li + li {
     border-left: white solid 1px;
 }
 
-#button > #congTrinhTieuBieu {
-    font-weight: bold;
-    color: #00C2FF;
+.tin-tuyen-dung {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #000000;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 25px;
+}
+
+
+.tin-tuyen-dung img {
+    width: 245px;
+    height: 235px;
+    /* position: relative; */
+    /* gap: 0px; */
+    /* opacity: 0; */
+}
+.tin-tuyen-dung h2 {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    text-align: center;
+    margin: 0;
+}
+
+.tin-tuyen-dung p {
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24.2px;
+    text-align: left;
+    margin: 0;
 }

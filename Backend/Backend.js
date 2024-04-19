@@ -4,33 +4,24 @@ const sql = require('mssql');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const secretKey = 'f8cdb04495ded47615258f9dc6a3f4707fd2405434fefc3cbf4ef4e6';
+const bcrypt = require('bcrypt')
+const verifyToken = require('./Middleware/jwtVerify')
 
 var config = require('./Database/Sql.config')
-var rateLimitConfig = require('./Rate Limit/Server_Rate_Limit.config')
+var rateLimitConfig = require('./Rate Limit/Server_Rate_Limit.config');
+const sqlConfig = require('./Database/Sql.config');
+
 
 const port = 3001;
 
 app.use(cors())
 app.use(express.json())
 
-const authenticateJWT = (req, res, next) => {
-    const token = req.header('x-auth-token');
-    if (!token) return res.status(401).json({ message: 'Authenticate failed'});
-
-    try {
-        const decode = jwt.verify(token, secretKey);
-        req.user = decode;
-        next();
-    } catch (err) {
-        res.status(400).json({ message: 'Invalid token' });
-    }
-}
-
 app.get('/api/getHeaderData', (req, res) => {
     sql.connect(config, function(err) {
         if (err) console.log(err);
         else {
-            new sql.Request().query('select * from HeaderData', (err, result) => {
+            new sql.Request().query("select * from HeaderData", (err, result) => {
                 if (err) {
                     res.status(500).send(err);
                 }
@@ -138,6 +129,90 @@ app.put('/api/putForm', rateLimitConfig, (req, res) => {
                 }
             })
         }
+    })
+})
+
+// app.post('/api/Login', (req, res) => {
+//     let haveSent = false;
+//     sql.connect(config, function(err) {
+//         if (err) console.log(err)
+//         else {
+//             new sql.Request().query('select * from TaiKhoan', (err, result) => {
+//                 if (err) console.log(err)
+//                 else {
+//                     for (let i = 0; i < result.recordset.length; i++) {
+//                         if (result.recordset[i].username === req.body.username) {
+//                             bcrypt.compare(req.body.password, result.recordset[i].password, function(err, result) {
+//                                 if (result) {
+//                                     try {
+//                                         token = jwt.sign({
+//                                             user: req.body.username
+//                                         }, secretKey)
+//                                     } catch (err) {
+//                                         console.log(err)
+//                                     }
+//                                     res.status(200).json({
+//                                         success: true,
+//                                         username: req.body.username,
+//                                         data: token
+//                                     })
+//                                     haveSent = true;
+//                                 }
+//                             })
+//                         }
+//                         if (haveSent) break;
+//                     }
+//                 }
+//             })
+//         }
+//     })
+// })
+
+app.post('/api/Login', (req, res) => {
+    haveSent = false
+    sql.connect(config, function(err) {
+        if (err) console.log(err)
+        else {
+            new sql.Request().query("select * from TaiKhoan", (err, result) => {
+                if (err) console.log(err)
+                else {
+                    for (let i = 0; i < result.recordset.length; i++) {
+                        if (result.recordset[i].username == req.body.username) {
+                            bcrypt.compare(req.body.password, result.recordset[i].password, function(err, result) {
+                                if (result) {
+                                    res.status(200).json({
+                                        success: true,
+                                        user: req.body.username
+                                    })
+                                    haveSent = true;
+                                }
+                                if (err) console.log(err)
+                            })
+                        }
+                        if (haveSent) break
+                    }
+                }
+            })
+        }
+    })
+})
+
+app.put('/api/insertHeaderData', (req, res) => {
+    console.log(req.body)
+    sql.connect(config, function(err) {
+        if (err) console.log(err)
+        // else {
+        //     new sql.Request().query("insert into HeaderData values (null, N'" + req.body.hinhAnh + "', 'header', 'false')", (err, result) => {
+        //         if (err) {
+        //             console.log(err);
+        //             res.status(500).send({ message: 'insert fail' })
+        //         }
+        //         else if (result) {
+        //             console.log('Success')
+        //             res.status(200).send({ message: 'insert success' })
+        //         }
+        //     })
+        // }
     })
 })
 

@@ -7,7 +7,9 @@ document.getElementById("infoDisplay").innerHTML += "<li>Chi nhánh: " + CongTyD
 document.getElementById("infoDisplay").innerHTML += "<li>Tel: " + CongTyData.sdt[0] + " - " + CongTyData.sdt[1] + " Hotline: " + CongTyData.hotline;
 document.getElementById("infoDisplay").innerHTML += "<li>Giấy phép kinh doanh số: " + CongTyData.giayPhepKinhDoanh;
 document.getElementById("infoDisplay").innerHTML += "<li>Copyright 2018 © Bản quyền thuộc về Công ty"
+
 document.addEventListener("DOMContentLoaded", function() {
+    
     const productList = document.getElementById("product-list");
     const nextBtn = document.getElementById("nextBtn");
     const prevBtn = document.getElementById("prevBtn");
@@ -91,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Chèn card vào danh sách sản phẩm
             productList.appendChild(productCard);
         }
-    }
+}
 
     // Hàm để xử lý khi nhấn nút "Next"
     nextBtn.onclick = function() {
