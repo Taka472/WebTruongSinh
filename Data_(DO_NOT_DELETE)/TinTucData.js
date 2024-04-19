@@ -12,7 +12,7 @@ var TinTucData = [
     },
     {
         id: 2,
-        id: 1,
+        // id: 1,
         hinhAnh: '../../Data_(DO_NOT_DELETE)/Image/New2.png',
         tieuDe: 'NHÂN VIÊN THỊ TRƯỜNG, MARKETING',
         nhanDe: 'Tuyển nhân viên thị trường, tiếp thị 5 người',
