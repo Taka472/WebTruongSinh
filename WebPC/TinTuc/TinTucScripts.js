@@ -1,6 +1,8 @@
 let thisPage = 1;
 let limit = 6;
 
+let TinTucData;
+
 function loadItem(){
     let list = document.querySelectorAll('.list .item'); // Update list here
     let beginGet = limit * (thisPage - 1);
