@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const dir_name = "D:/WebTruongSinh";
+const dir_name = "D:/HuongTra/Web TS";
 
 app.get('/', (req, res) => {
     app.use(express.static(path.join(dir_name, "/Data_(DO_NOT_DELETE)/public")))
