@@ -1,6 +1,12 @@
 let currentPage = 1;
 const imagesPerPage = 6;
 
+let HeaderData, CongTyData, ChungNhanData
+let totalPages
+
+const apiURL = 'http://localhost:3001'
+const serverURL = 'http://localhost:3000'
+
 //Tự động active button của trang hiện tại
 function activePagination() {
     var pageItem = $(".pagination li").not(".prev,.next");
@@ -27,46 +33,57 @@ function activePagination() {
     });
 }
 
-//Tự động điều chỉnh số lượng trang theo số lượng giấy chứng nhận
-let totalImages = ChungNhanData.length;
-let totalPages = Math.ceil(totalImages / imagesPerPage);
-function createPaginationButtons() {
-    let prevButton = document.createElement('li');
-    prevButton.classList.add('page-item', 'prev');
-    let prevLink = document.createElement('button');
-    prevLink.classList.add('page-link');
-    prevLink.addEventListener('click', previousPage);
-    prevLink.innerHTML = '<span aria-hidden="true">&lsaquo;</span><span class="sr-only">Previous</span>';
-    prevButton.appendChild(prevLink);
-    document.getElementById("paginationList").appendChild(prevButton);
-
-    for (let i = 1; i <= totalPages; i++) {
-        let pageButton = document.createElement('li');
-        pageButton.classList.add('page-item');
-        let pageLink = document.createElement('button');
-        pageLink.classList.add('page-link');
-        pageLink.textContent = i;
-        pageLink.addEventListener('click', function() {
-            goToPage(i);
-        });
-        pageButton.appendChild(pageLink);
-        document.getElementById("paginationList").appendChild(pageButton);
-    }
-
-    let nextButton = document.createElement('li');
-    nextButton.classList.add('page-item', 'next');
-    let nextLink = document.createElement('button');
-    nextLink.classList.add('page-link');
-    nextLink.addEventListener('click', nextPage);
-    nextLink.innerHTML = '<span aria-hidden="true">&rsaquo;</span><span class="sr-only">Next</span>';
-    nextButton.appendChild(nextLink);
-    document.getElementById("paginationList").appendChild(nextButton);
-
-    $(document).ready(function() {
-        activePagination();
-    });
+const FetchChungNhanData = async() => {
+    await fetch(apiURL + '/api/getChungNhanData', {mode: 'cors'})
+        .then(response => response.json())
+        .then(data => {
+            ChungNhanData = data;
+            return ChungNhanData
+        })
+        .then(() => {
+            totalImages = ChungNhanData.length;
+            totalPages = Math.ceil(totalImages / imagesPerPage);
+            function createPaginationButtons() {
+                let prevButton = document.createElement('li');
+                prevButton.classList.add('page-item', 'prev');
+                let prevLink = document.createElement('button');
+                prevLink.classList.add('page-link');
+                prevLink.addEventListener('click', previousPage);
+                prevLink.innerHTML = '<span aria-hidden="true">&lsaquo;</span><span class="sr-only">Previous</span>';
+                prevButton.appendChild(prevLink);
+                document.getElementById("paginationList").appendChild(prevButton);
+            
+                for (let i = 1; i <= totalPages; i++) {
+                    let pageButton = document.createElement('li');
+                    pageButton.classList.add('page-item');
+                    let pageLink = document.createElement('button');
+                    pageLink.classList.add('page-link');
+                    pageLink.textContent = i;
+                    pageLink.addEventListener('click', function() {
+                        goToPage(i);
+                    });
+                    pageButton.appendChild(pageLink);
+                    document.getElementById("paginationList").appendChild(pageButton);
+                }
+            
+                let nextButton = document.createElement('li');
+                nextButton.classList.add('page-item', 'next');
+                let nextLink = document.createElement('button');
+                nextLink.classList.add('page-link');
+                nextLink.addEventListener('click', nextPage);
+                nextLink.innerHTML = '<span aria-hidden="true">&rsaquo;</span><span class="sr-only">Next</span>';
+                nextButton.appendChild(nextLink);
+                document.getElementById("paginationList").appendChild(nextButton);
+            
+                $(document).ready(function() {
+                    activePagination();
+                });
+            }
+            createPaginationButtons();
+        })
 }
-createPaginationButtons();
+//Tự động điều chỉnh số lượng trang theo số lượng giấy chứng nhận
+
 
 //Tự động lấy dữ liệu cho trang hiện tại
 async function fillTable(page) {
@@ -74,7 +91,7 @@ async function fillTable(page) {
     tableBody.innerHTML = '';
 
     try {
-        const response = await fetch(apiURL + '/getChungNhanData', {mode: 'cors'})
+        await fetch(apiURL + '/api/getChungNhanData', {mode: 'cors'})
         .then (response => response.json())
         .then(data => {
             ChungNhanData = data;
@@ -82,12 +99,13 @@ async function fillTable(page) {
         })
         .then (() => {
             const startIndex = (page - 1) * imagesPerPage;
-            const endIndex = Math.min(startIndex + imagesPerPage, totalImages);
+            const endIndex = Math.min(startIndex + imagesPerPage, ChungNhanData.length);
 
             ChungNhanData.forEach((item, index) => {
                 if (index >= startIndex && index < endIndex) {
                     if (index % 3 === 0) {
-                        var row = document.createElement('tr');
+                        row = document.createElement('tr');
+                        row.id = index;
                         tableBody.appendChild(row);
                     }
 
@@ -101,6 +119,7 @@ async function fillTable(page) {
                     tenParagraph.textContent = item.ten;
                     cell.appendChild(tenParagraph);
 
+                    console.log(document.getElementById(index))
                     row.appendChild(cell);
                 }
             });
@@ -127,9 +146,10 @@ async function fillTable(page) {
     }
 }
 
+FetchChungNhanData()
+
 //Tự động lấy dữ liệu chứng nhận cho trang tương ứng
 fillTable(currentPage);
-
 //Điều hướng sang trang tiếp theo
 function nextPage() {
     currentPage++;
@@ -147,14 +167,9 @@ function goToPage(pageNumber) {
 }
 
 //Header, Footer
-let HeaderData, CongTyData;
-
-const apiURL = 'http://localhost:3001'
-const serverURL = 'http://localhost:3000'
-
 const makeAPICall = async() => {
     try {
-        await fetch(apiURL + '/TrangChu/getHeaderData', {mode: 'cors'})
+        await fetch(apiURL + '/api/getHeaderData', {mode: 'cors'})
         .then(response => response.json())
         .then(data => {
             HeaderData = data
@@ -173,7 +188,7 @@ const makeAPICall = async() => {
 
 const fecthCongTyData = async() => {
     try {
-        await fetch(apiURL + '/getCongTyData', {mode: 'cors'})
+        await fetch(apiURL + '/api/getCongTyData', {mode: 'cors'})
         .then(response => response.json())
         .then(data => {
             CongTyData = data;
@@ -204,16 +219,16 @@ var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
 var TinTuc = document.getElementById('last')
 var LienHe = document.getElementById('chatbox')
 
+TrangChu.onclick = function() {
+    window.location = '/'
+}
+
 SanPham.onclick = function() {
     window.location = '/SanPham'
 }
 
 BaoHanh.onclick = function() {
     window.location = '/BaoHanh'
-}
-
-TrangChu.onclick = function() {
-    window.location = '/TrangChu'
 }
 
 HuongDanSuDung.onclick = function() {

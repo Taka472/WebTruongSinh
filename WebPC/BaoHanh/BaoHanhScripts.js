@@ -4,8 +4,7 @@ const apiURL = 'http://localhost:3001'
 const serverURL = 'http://localhost:3000'
 
 const makeAPICall = async() => {
-    try {
-        await fetch(apiURL + '/TrangChu/getHeaderData', {mode: 'cors'})
+    await fetch(apiURL + '/api/getHeaderData', {mode: 'cors'})
         .then(response => response.json())
         .then(data => {
             HeaderData = data
@@ -13,18 +12,13 @@ const makeAPICall = async() => {
         })
         .then (() => {
             document.getElementById("title").src = serverURL + HeaderData[0].hinhAnh
-            document.getElementById("scrollpane").src = serverURL + HeaderData[1].hinhAnh;
+            document.getElementById("scrollpane").src = serverURL + HeaderData[1].hinhAnh
         })
-        .catch(error => console.error('Error:', error));
-
-    } catch (e) {
-        console.log(e);
-    }
+        .catch(error => console.error('Error when fetching Header Data:' + error));                                                                                             
 }
 
 const fecthCongTyData = async() => {
-    try {
-        await fetch(apiURL + '/getCongTyData', {mode: 'cors'})
+    await fetch(apiURL + '/api/getCongTyData', {mode: 'cors'})
         .then(response => response.json())
         .then(data => {
             CongTyData = data;
@@ -38,34 +32,31 @@ const fecthCongTyData = async() => {
             document.getElementById("infoDisplay").innerHTML += "<li>Giấy phép kinh doanh số: " + CongTyData[0].giayPhepKinhDoanh;
             document.getElementById("infoDisplay").innerHTML += "<li>Copyright 2018 © Bản quyền thuộc về Công ty"
         })
-        .catch(error => console.error('Error:', error));
-    } catch(e) {
-        console.log(e);
-    }
+        .catch(error => console.error('Error when fetching Cong ty Data: ' + error));
 }
 
 makeAPICall()
 fecthCongTyData()
 
 var SanPham = document.getElementById('sanPham')
-var ChungNhan = document.getElementById('chungNhan')
 var TrangChu = document.getElementById('trangChu')
+//var BaoHanh = document.getElementById('baoHanh')
 var HuongDanSuDung = document.getElementById('huongDanSuDung')
 var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
 var TinTuc = document.getElementById('last')
 var LienHe = document.getElementById('chatbox')
 
+TrangChu.onclick = function() {
+    window.location = '/'
+}
+
 SanPham.onclick = function() {
     window.location = '/SanPham'
 }
 
-TrangChu.onclick = function() {
-    window.location = '/TrangChu'
-}
-
-ChungNhan.onclick = function() {
-    window.location = '/ChungNhan'
-}
+// BaoHanh.onclick = function() {
+//     window.location = '/BaoHanh'
+// }
 
 HuongDanSuDung.onclick = function() {
     window.location = '/HuongDanSuDung'
