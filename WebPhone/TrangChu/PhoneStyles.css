@@ -68,7 +68,7 @@ body {
 }
 
 .infoTitle {
-    font-size: 6vw;
+    font-size: 6vw; /* vw = view width */
     font-weight: bolder;
     font-family: Inter;
 }
