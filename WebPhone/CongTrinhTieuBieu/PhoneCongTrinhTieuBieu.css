@@ -19,18 +19,17 @@ body {
     object-fit: contain;
     margin: 0px;
 }
-
-
-
-.infoBox {
-    margin-top: 50px;
-    height: 250px;
-    width: 90%;
-    border-radius: 20px;
+.title{
+    font-size: 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    
 }
+
+
+
 
 #firstBox {
     background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
