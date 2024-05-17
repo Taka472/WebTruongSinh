@@ -1,4 +1,5 @@
 #ignore node modules file
 node_modules
+Sql.config.js
 *.mdf
 *.ndf
