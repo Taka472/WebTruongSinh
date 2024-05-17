@@ -78,3 +78,27 @@ input[type=text], select, textarea {
 /* @media (min-width: 600px) {
     #fname,#{}
 } */
+.boxAddress {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 95vw;
+    height: 90vw;
+    display: flex;
+    font-family: Inter;
+}
+
+@media screen and (min-width: 600px) {
+    .boxAddress{
+        margin-top: 50px;
+        width: 35vw;
+        height: 90%;
+    }
+    .form-adress{
+        display: flex;
+    }
+    .form-container{
+        width: 55vw;
+        margin-right: 25px;
+    }
+
+}
