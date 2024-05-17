@@ -1,7 +1,7 @@
 let thisPage = 1;
 let limit = 6;
 
-let HeaderData, CongTyData ,CongTrinhData;
+let HeaderData, CongTyData ,CongTrinhTieuBieu;
 
 const apiURL = 'http://localhost:3001'
 const serverURL = 'http://localhost:3000'
