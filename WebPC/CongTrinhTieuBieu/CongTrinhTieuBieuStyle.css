@@ -11,7 +11,9 @@ body {
     min-width:992px!important
 }
 
-
+#button {
+    width: 100%;
+}
 
 .header {
     display: block;
