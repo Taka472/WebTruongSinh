@@ -1,6 +1,12 @@
 #ignore node modules file
 node_modules
+
+#ignore sql config
 Database
+
+#igore server
 Server
+
+#ignore database file
 *.mdf
 *.ndf
