@@ -4,7 +4,7 @@ insert into CongTyData values (1, N'CÔNG TY TNNHH SẢN XUẤT THƯƠNG MẠI X
 'bottretmastictruongsinh.com.vn', '0302080756')
 
 -- Insert header data
-insert into HeaderData values ('header binh thuong', 'public/Title.png', 'header', 'true')
+insert into HeaderData values ('header binh thuong', '/Image/Title.png', 'header', 'true')
 insert into HeaderData values ('scroll banner', '/Image/ScrollPanel.png', 'scroll', 'true')
 
 -- Insert chung nhan data
