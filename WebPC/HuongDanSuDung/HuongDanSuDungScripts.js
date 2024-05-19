@@ -46,3 +46,27 @@ const fecthCongTyData = async() => {
 
 makeAPICall()
 fecthCongTyData()
+
+TrangChu.onclick = function() {
+    window.location = '/'
+}
+
+BaoHanh.onclick = function() {
+    window.location = '/BaoHanh'
+}
+
+ChungNhan.onclick = function() {
+    window.location = '/ChungNhan'
+}
+
+HuongDanSuDung.onclick = function() {
+    window.location = '/HuongDanSuDung'
+}
+
+CongTrinhTieuBieu.onclick = function() {
+    window.location = '/CongTrinhTieuBieu'
+}
+
+TinTuc.onclick = function() {
+    window.location = '/TinTuc'
+}
