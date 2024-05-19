@@ -1,8 +1,6 @@
 const sqlConfig = {
-    // user: 'TranLeHuy',
-    // password: 'tranlehuy',
-    user: 'sa',
-    password: '123',
+    user: 'TranLeHuy',
+    password: 'tranlehuy',
     database: 'WebTruongSinh',
     server: 'localhost',
     trustServerCertificate: true,

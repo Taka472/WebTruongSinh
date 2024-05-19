@@ -5,8 +5,7 @@ const app = express();
 const port = 3000;
 const verifyToken = require('./Middleware/jwtVerify')
 
-const dir_name = "D:/HuongTra/Web TS";
-// const dir_name = "D:/WebTruongSinh";
+const dir_name = "D:/WebTruongSinh";
 
 app.use(useragent.express())
 
