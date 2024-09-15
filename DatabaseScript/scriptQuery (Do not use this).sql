@@ -1,12 +1,12 @@
 ﻿CREATE DATABASE WebTruongSinh ON
 (NAME = WebTruongSinh,
-FILENAME = 'D:\WebTruongSinh\DatabaseScript\WebTruongSinh_data.mdf',
+FILENAME = 'D:\Database_WebTruongSinh\WebTruongSinh_data.mdf',
 SIZE = 10MB,
 MAXSIZE = 50MB,
 FILEGROWTH = 5
 ) LOG ON (
 NAME = WebTruongSinh_log,
-FILENAME = 'D:\WebTruongSinh\DatabaseScript\WebTruongSinh_data.ndf',
+FILENAME = 'D:\Database_WebTruongSinh\WebTruongSinh_data.ndf',
 SIZE = 5MB,
 MAXSIZE = 10MB,
 FILEGROWTH = 5
