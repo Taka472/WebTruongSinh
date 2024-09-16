@@ -94,10 +94,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-<<<<<<< HEAD
-=======
     /* padding-left: 3.5rem; */
->>>>>>> 42e2001e744d8fee988cbfe2ac974ea43ec64ccb
     background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
 }
 
@@ -209,8 +206,8 @@ li + li {
 .description {  
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-center;
+
 }
 
 .row{
@@ -309,83 +306,71 @@ li + li {
 }
 
 
-#trangChu:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+/* DI ĐỘNG */
 
-#sanPham:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
 
-#chungNhan:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    .header {
+        width: 100%;
+    }
 
-#huongDanSuDung:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    #button {
+        flex-direction: column;
+        height: auto;
+    }
 
-#baoHanh:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    #button > span, #button > a, #button > #first, #button > #last {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 
-#first:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    .infoBox {
+        width: 90%;
+        flex-direction: column;
+        margin-top: 20px;
+    }
 
-#last:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    #firstBox_1, #firstBox_2 {
+        height: auto;
+        margin-top: 20px;
+        width: 90%;
+    }
 
-#congTrinhTieuBieu:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    #firstImage {
+        width: 100%;
+    }
 
-/* Tra cứu */
-#navSanPham:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    .searchContainer {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-#navChungNhan:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    #searchInput, #searchButton {
+        width: 100%;
+        height: 45px;
+    }
 
-#navHuongDanSuDung:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    #footer {
+        flex-direction: column;
+        gap: 50px;
+        height: auto;
+        padding: 20px;
+    }
 
-#navBaoHanh:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-#navCongTrinhTieuBieu:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 
-#navLienHe:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
+    .product-card {
+        width: 90%;
+    }
 
-#first:hover {
-    text-decoration: underline;
-    cursor: pointer;
+    .add-to-search-button {
+        font-size: 24px;
+        padding: 10px;
+    }
 }
-
-#last:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
