@@ -220,7 +220,7 @@ var TinTuc = document.getElementById('last')
 var LienHe = document.getElementById('chatbox')
 
 TrangChu.onclick = function() {
-    window.location = '/'
+    window.location = '/Home'
 }
 
 SanPham.onclick = function() {

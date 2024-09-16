@@ -60,23 +60,25 @@ document.addEventListener("DOMContentLoaded", function() {
                     // Định dạng màu và in đậm cho giá sản phẩm
                     productPrice.style.color = "red"; // Đặt màu đỏ
                     productPrice.style.fontWeight = "bold"; // Đặt in đậm
+                    productPrice.style.fontSize = '20px';
                     // Thêm ký tự đơn vị đồng và định dạng số tiền
                     // const formattedPrice = numberWithDots(product.gia) + "₫"; // Định dạng số tiền và thêm ký tự đơn vị
                     productPrice.textContent = "Giá: Liên hệ";
+
         
                     // Tạo phần tử dòng chứa nút Thêm vào giỏ hàng
-                    const buttonRow = document.createElement("div");
-                    buttonRow.classList.add("row", "g-0", "justify-content-center");
+                    // const buttonRow = document.createElement("div");
+                    // buttonRow.classList.add("row", "g-0", "justify-content-center");
         
                     // Tạo phần tử cột cho nút Thêm vào giỏ hàng
-                    const buttonCol = document.createElement("div");
-                    buttonCol.classList.add("col-md-12", "text-center");
+                    // const buttonCol = document.createElement("div");
+                    // buttonCol.classList.add("col-md-12", "text-center");
         
                     // Tạo nút Thêm vào giỏ hàng
-                    const addButton = document.createElement("button");
-                    addButton.id = "addButtonBasket";
-                    addButton.textContent = "Thêm vào giỏ";
-                    addButton.classList.add("add-to-cart-button");
+                    // const addButton = document.createElement("button");
+                    // addButton.id = "addButtonBasket";
+                    // addButton.textContent = "Thêm vào giỏ";
+                    // addButton.classList.add("add-to-cart-button");
         
                     // Chèn hình ảnh vào card-body
                     cardBody.appendChild(productImage);
@@ -86,14 +88,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     cardBody.appendChild(productPrice);
         
                     // Chèn nút vào cột nút
-                    buttonCol.appendChild(addButton);
+                    // buttonCol.appendChild(addButton);
         
                     // Chèn cột nút vào dòng nút
-                    buttonRow.appendChild(buttonCol);
+                    // buttonRow.appendChild(buttonCol);
         
                     // Chèn card-body, dòng nút vào card
                     productCard.appendChild(cardBody);
-                    productCard.appendChild(buttonRow);
+                    // productCard.appendChild(buttonRow);
         
                     // Chèn card vào danh sách sản phẩm
                     productList.appendChild(productCard);
@@ -178,8 +180,6 @@ fecthCongTyData()
     updatePaginationButtons();
 });
 
-
-
 var TrangChu = document.getElementById('trangChu')
 var ChungNhan = document.getElementById('chungNhan')
 var BaoHanh = document.getElementById('baoHanh')
@@ -216,3 +216,21 @@ TinTuc.onclick = function() {
 //     window.location = '/LienHe'
 // }
 
+var searchButton = document.getElementById("cartButton")
+
+searchButton.addEventListener('click', function() {
+    search(document.getElementById('searchInput').value)
+})
+
+async function search(value) {
+    console.log("Searching with " + value)
+    await fetch(apiURL + '/api/getSanPhamData', {mode: 'cors'})
+            .then(response => response.json())
+            .then(data => {
+                SanPhamData = data
+                return SanPhamData
+            })
+            .then(SanPhamData => {
+
+            })
+}
