@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảo Hành</title>
+    <link rel="stylesheet" href="PhoneBaoHanhStyles.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div style="position: fixed">
+        <img src="/Image/Chatbox.png" id="chatbox">
+        <img class="header" id="title">
+        <img id="menu" src="/Image/Menu.png">
+    </div>
+    <img class="header" id="scrollpane">
+<!-- BaoHanh Content -->
+    <div class="container">
+        <div class="item item-1">
+            <div class="bar">
+                <h6>
+                    <b>Thông tin liên hệ</b>
+                    <i class="material-icons phone-icon">phone</i>
+                </h6>
+                <div class="info">
+                    <div class="contact-section">
+                        <p><b>Tư vấn bán hàng:</b></p>
+                        <ul>
+                            <li><i>(028) 3715 0225</i></li>
+                            <li><i>(028) 6259 1121</i></li>
+                        </ul>
+                    </div>
+                    <div class="contact-section hotline">
+                        <p><b>Hotline:</b></p>
+                        <ul>
+                            <li><i>0933223988</i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>               
+        <div class="item item-2">
+            <p>Mẫu hợp đồng bảo hành: <u><i>Hình ảnh</i></u></p>
+            <p class="tableTitle"><b>Bảng bảo hành các sản phẩm</b></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sản phẩm</th>
+                        <th>Nội thất</th>
+                        <th>Ngoại thất</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+<!-- End -->
+    <div id="logoContainer">
+        <img src="/Image/Logos.png" id="logo">
+    </div>
+
+    <div id="footer">
+        <div id="companyInfo">
+            <span id="footerTitle"></span>
+            <ul id="infoDisplay">
+            </ul>
+        </div>
+    </div>
+
+    <script src="PhoneBaoHanhScripts.js"></script>
+</body>
+</html>
