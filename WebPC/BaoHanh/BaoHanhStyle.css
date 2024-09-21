@@ -185,6 +185,8 @@ th, td {
 
 #chatbox {
     position: fixed;
+    bottom: 3%;
     right: 5%;
-    bottom: 5%;
+    width: 15vw;
+    object-fit: contain;
 }
