@@ -1,4 +1,4 @@
-let HeaderData, CongTyData, ChungNhanData;
+let HeaderData, CongTyData, ChungNhanData, SanPhamData;
 
 const apiURL = 'http://localhost:3001'
 const serverURL = 'http://localhost:3000'
@@ -35,12 +35,72 @@ const fecthCongTyData = async() => {
         .catch(error => console.error('Error when fetching Cong ty Data: ' + error));
 }
 
-makeAPICall()
-fecthCongTyData()
+const fetchSanPhamData = async () => {
+    try {
+        const response = await fetch(apiURL + '/api/getSanPhamData', { mode: 'cors' });
+        
+        const SanPhamData = await response.json();
+        
+        populateTable(SanPhamData);
+        
+    } catch (error) {
+        console.error('Error when fetching SanPham Data: ' + error);
+    }
+};
+
+function extractBaseName(productName) {
+    // Loại bỏ các từ khóa như "Nội Thất", "Ngoại Thất" và khoảng trắng thừa
+    return productName.replace(/( Nội Thất| Ngoại Thất)/i, '').trim();
+}
+
+function populateTable(sanPhamData) {
+    const tableBody = document.getElementById('product-table-body');
+    const productNames = [];
+
+    sanPhamData.forEach(sp => {
+        // Lấy phần tên gốc (loại bỏ Nội Thất, Ngoại Thất)
+        const baseName = extractBaseName(sp.ten);
+
+        // Nếu phần tên gốc chưa có trong productNames, thêm vào
+        if (!productNames.includes(baseName)) {
+            productNames.push(baseName);
+        }
+    });
+
+    // Duyệt qua các tên sản phẩm đã được lọc
+    productNames.forEach(productName => {
+        // Tạo hàng mới cho sản phẩm
+        const row = document.createElement('tr');
+
+        // Cột tên sản phẩm
+        const nameCell = document.createElement('td');
+        nameCell.innerText = productName;
+        row.appendChild(nameCell);
+
+        // Cột Nội thất
+        const noiThatCell = document.createElement('td');
+        const noiThatProduct = sanPhamData.find(item => extractBaseName(item.ten) === productName && item.ten.includes('Nội Thất'));
+        noiThatCell.innerText = noiThatProduct ? noiThatProduct.baoHanh : 'N/A';
+        row.appendChild(noiThatCell);
+
+        // Cột Ngoại thất
+        const ngoaiThatCell = document.createElement('td');
+        const ngoaiThatProduct = sanPhamData.find(item => extractBaseName(item.ten) === productName && item.ten.includes('Ngoại Thất'));
+        ngoaiThatCell.innerText = ngoaiThatProduct ? ngoaiThatProduct.baoHanh : 'N/A';
+        row.appendChild(ngoaiThatCell);
+
+        // Thêm hàng vào body của bảng
+        tableBody.appendChild(row);
+    });
+}
+
+makeAPICall();
+fecthCongTyData();
+fetchSanPhamData();
 
 var SanPham = document.getElementById('sanPham')
 var TrangChu = document.getElementById('trangChu')
-//var BaoHanh = document.getElementById('baoHanh')
+var ChungNhan = document.getElementById('chungNhan')
 var HuongDanSuDung = document.getElementById('huongDanSuDung')
 var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
 var TinTuc = document.getElementById('last')
@@ -54,9 +114,9 @@ SanPham.onclick = function() {
     window.location = '/SanPham'
 }
 
-// BaoHanh.onclick = function() {
-//     window.location = '/BaoHanh'
-// }
+ChungNhan.onclick = function() {
+    window.location = '/ChungNhan'
+}
 
 HuongDanSuDung.onclick = function() {
     window.location = '/HuongDanSuDung'
