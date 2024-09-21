@@ -44,12 +44,47 @@ body {
     padding-top: 10px;
 }
 
+#firstBox {
+    background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
+    margin-top: 20px;
+    height: 160px;
+    width: 80%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #FFCCCC 0%, #FFFF99 100%);
+}
 
+.boxTitle {
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: Inter;
+    margin: 5px 0 5px; /* Shorter notation for margin */
+    text-align: center;
+}
+.searchContainer {
+    display: flex;
+    align-items: center;
+}
+#searchInput {
+    width: 250px;
+    height: 40px;
+    border: 1px solid #000000;
+    margin-bottom: 5px;
+    transform: translate(-4px, -4px), rotate(315deg);
 
-#firstImage {
-    display: block;
-    width: 40%;
-    object-fit: contain;
+}
+
+#searchButton {
+    width: 250px;
+    height: 30px;
+    background-color: #D70000;
+    color: white;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 5px;
 }
 
 #thirdImage {
@@ -72,16 +107,8 @@ body {
     text-align: center;
 }
 
-#secondBoxImage {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
 
-#firstCer, #secondCer {
-    width: 22vw;
-    object-fit: contain;
-}
+
 
 #logoContainer {
     margin-top: 20px;
@@ -175,7 +202,17 @@ li + li {
     text-decoration: none;
 }
 
-#selectedItem  {
-    color: #CC0000;
-    font-weight: bold;
+#pagination-buttons {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc (nếu cần) */
+    margin-top: 20px;        /* Thêm khoảng cách phía trên nếu cần */
 }
+
+#pagination-buttons button {
+    margin: 0 10px;          /* Thêm khoảng cách giữa các nút */
+    padding: 5px 10px;      /* Tăng kích thước nút nếu cần */
+    font-size: 16px;         /* Tăng kích thước chữ cho nút */
+    cursor: pointer;
+}
+
