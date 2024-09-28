@@ -11,7 +11,7 @@ const makeAPICall = async() => {
             return HeaderData;
         })
         .then(() => {
-            document.getElementById('title').src = serverURL + HeaderData[0].hinhAnh
+            // document.getElementById('title').src = serverURL + HeaderData[0].hinhAnh
             document.getElementById('scrollpane').src = serverURL + HeaderData[1].hinhAnh
         })
         .catch(err => console.error('Error when fetching Header Data:' + err))
@@ -38,31 +38,79 @@ const fetchCongTyData = async() => {
 makeAPICall()
 fetchCongTyData()
 
-document.addEventListener('DOMContentLoaded', function () {
-    var sideMenu = document.getElementById('sideMenu');
-    var menu = document.getElementById('menu');
-    var close = document.getElementById('closeSideMenu');
+// document.addEventListener('DOMContentLoaded', function () {
+//     var sideMenu = document.getElementById('sideMenu');
+//     var menu = document.getElementById('menu');
+//     var close = document.getElementById('closeSideMenu');
 
-    menu.onclick = () => {
-        sideMenu.style.width = '45%';
-        sideMenu.style.padding = '20px';
-    };
+//     menu.onclick = () => {
+//         sideMenu.style.width = '45%';
+//         sideMenu.style.padding = '20px';
+//     };
 
-    close.onclick = () => {
-        sideMenu.style.width = '0%';
-    };
-});
+//     close.onclick = () => {
+//         sideMenu.style.width = '0%';
+//     };
+// });
 
-const fetchSanPhamData = async () => {
+function toggleMenu() {
+    var sideMenu = document.getElementById("sideMenu");
+    var computedStyle = window.getComputedStyle(sideMenu);
+    var leftValue = computedStyle.left;
+
+    if (leftValue === "-250px" || leftValue === "") {
+        sideMenu.style.left = "0";
+    } else {
+        sideMenu.style.left = "-250px";
+    }
+}
+
+var SanPham = document.getElementById('sanPham')
+var TrangChu = document.getElementById('trangChu')
+var ChungNhan = document.getElementById('chungNhan')
+var HuongDanSuDung = document.getElementById('huongDanSuDung')
+var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
+var TinTuc = document.getElementById('last')
+var LienHe = document.getElementById('chatbox')
+
+TrangChu.onclick = function() {
+    window.location = '/'
+}
+
+SanPham.onclick = function() {
+    window.location = '/SanPham'
+}
+
+ChungNhan.onclick = function() {
+    window.location = '/ChungNhan'
+}
+
+HuongDanSuDung.onclick = function() {
+    window.location = '/HuongDanSuDung'
+}
+
+CongTrinhTieuBieu.onclick = function() {
+    window.location = '/CongTrinhTieuBieu'
+}
+
+TinTuc.onclick = function() {
+    window.location = '/TinTuc'
+}
+
+LienHe.onclick = function() {
+    window.location = '/LienHe'
+}
+
+const fetchBaoHanhData = async () => {
     try {
-        const response = await fetch(apiURL + '/api/getSanPhamData', { mode: 'cors' });
+        const response = await fetch(apiURL + '/api/getBaoHanhData', { mode: 'cors' });
         
         const SanPhamData = await response.json();
         
         populateTable(SanPhamData);
         
     } catch (error) {
-        console.error('Error when fetching SanPham Data: ' + error);
+        console.error('Error when fetching BaoHanh Data: ' + error);
     }
 };
 
@@ -112,4 +160,4 @@ function populateTable(sanPhamData) {
     });
 }
 
-fetchSanPhamData();
+fetchBaoHanhData();

@@ -200,3 +200,48 @@ th {
     right: 5%;
     bottom: 5%;
 }
+
+#button > #chungNhan {
+    font-weight: bold;
+    color: #00C2FF;
+}
+
+/* Tra cứu */
+#navSanPham:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#navChungNhan:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#navHuongDanSuDung:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#navBaoHanh:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#navCongTrinhTieuBieu:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#navLienHe:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#first:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#last:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
