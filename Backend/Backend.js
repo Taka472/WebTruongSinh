@@ -216,6 +216,22 @@ app.put('/api/insertHeaderData', (req, res) => {
     })
 })
 
+app.get('/api/getBaoHanhData', (req, res) => {
+    sql.connect(config, function(err) {
+        if (err) console.log(err)
+        else {
+            new sql.Request().query('select ten, baoHanh from SanPhamData where baoHanh is not null', (err, result) => {
+                if (err) {
+                    res.status(500).send(err);
+                }
+                else {
+                    res.status(200).send(result.recordset)
+                }
+            })
+        }
+    })
+})
+
 app.listen(port, () => {
     console.log('App listening at port ' + port);
 })
