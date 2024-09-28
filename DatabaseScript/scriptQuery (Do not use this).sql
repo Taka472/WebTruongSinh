@@ -1,18 +1,18 @@
-﻿CREATE DATABASE WebTruongSinh ON
-(NAME = WebTruongSinh,
-FILENAME = 'D:\Database_WebTruongSinh\WebTruongSinh_data.mdf',
-SIZE = 10MB,
-MAXSIZE = 50MB,
-FILEGROWTH = 5
-) LOG ON (
-NAME = WebTruongSinh_log,
-FILENAME = 'D:\Database_WebTruongSinh\WebTruongSinh_data.ndf',
-SIZE = 5MB,
-MAXSIZE = 10MB,
-FILEGROWTH = 5
-)
+﻿--CREATE DATABASE WebTruongSinh ON
+--(NAME = WebTruongSinh,
+--FILENAME = 'D:\Database_WebTruongSinh\WebTruongSinh_data.mdf',
+--SIZE = 10MB,
+--MAXSIZE = 50MB,
+--FILEGROWTH = 5
+--) LOG ON (
+--NAME = WebTruongSinh_log,
+--FILENAME = 'D:\Database_WebTruongSinh\WebTruongSinh_data.ndf',
+--SIZE = 5MB,
+--MAXSIZE = 10MB,
+--FILEGROWTH = 5
+--)
 
-use WebTruongSinh
+--use WebTruongSinh
 
 Create table CongTyData (
 id int primary key not null,
