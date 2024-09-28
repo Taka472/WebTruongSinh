@@ -246,3 +246,36 @@ TinTuc.onclick = function() {
 LienHe.onclick = function() {
     window.location = '/LienHe'
 }
+
+// Các mục trong menu Tra cứu
+var navSanPham = document.getElementById('navSanPham');
+var navChungNhan = document.getElementById('navChungNhan');
+var navBaoHanh = document.getElementById('navBaoHanh');
+var navHuongDanSuDung = document.getElementById('navHuongDanSuDung');
+var navCongTrinhTieuBieu = document.getElementById('navCongTrinhTieuBieu');
+var navLienHe = document.getElementById('navLienHe');
+
+// Điều hướng từ menu "Tra cứu"
+navSanPham.onclick = function() {
+    window.location = '/SanPham';
+}
+
+navChungNhan.onclick = function() {
+    window.location = '/ChungNhan';
+}
+
+navBaoHanh.onclick = function() {
+    window.location = '/BaoHanh';
+}
+
+navHuongDanSuDung.onclick = function() {
+    window.location = '/HuongDanSuDung';
+}
+
+navCongTrinhTieuBieu.onclick = function() {
+    window.location = '/CongTrinhTieuBieu';
+}
+
+navLienHe.onclick = function() {
+    window.location = '/LienHe';
+}

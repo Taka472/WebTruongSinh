@@ -9,7 +9,7 @@ const makeAPICall = async () => {
         const response = await fetch(apiURL + '/api/getHeaderData', { mode: 'cors' });
         HeaderData = await response.json();
         
-        document.getElementById('title').src = serverURL + HeaderData[0].hinhAnh;
+        // document.getElementById('title').src = serverURL + HeaderData[0].hinhAnh;
         document.getElementById('scrollpane').src = serverURL + HeaderData[1].hinhAnh;
     } catch (err) {
         console.error('Error fetching Header Data: ' + err);
@@ -39,20 +39,68 @@ makeAPICall();
 fetchCongTyData();
 
 // Sidebar Menu Controls
-document.addEventListener('DOMContentLoaded', function () {
-    var sideMenu = document.getElementById('sideMenu');
-    var menu = document.getElementById('menu');
-    var close = document.getElementById('closeSideMenu');
+// document.addEventListener('DOMContentLoaded', function () {
+//     var sideMenu = document.getElementById('sideMenu');
+//     var menu = document.getElementById('menu');
+//     var close = document.getElementById('closeSideMenu');
 
-    menu.onclick = () => {
-        sideMenu.style.width = '45%';
-        sideMenu.style.padding = '20px';
-    };
+//     menu.onclick = () => {
+//         sideMenu.style.width = '45%';
+//         sideMenu.style.padding = '20px';
+//     };
 
-    close.onclick = () => {
-        sideMenu.style.width = '0%';
-    };
-});
+//     close.onclick = () => {
+//         sideMenu.style.width = '0%';
+//     };
+// });
+
+function toggleMenu() {
+    var sideMenu = document.getElementById("sideMenu");
+    var computedStyle = window.getComputedStyle(sideMenu);
+    var leftValue = computedStyle.left;
+
+    if (leftValue === "-250px" || leftValue === "") {
+        sideMenu.style.left = "0";
+    } else {
+        sideMenu.style.left = "-250px";
+    }
+}
+
+var SanPham = document.getElementById('sanPham')
+var TrangChu = document.getElementById('trangChu')
+var BaoHanh = document.getElementById('baoHanh')
+var HuongDanSuDung = document.getElementById('huongDanSuDung')
+var CongTrinhTieuBieu = document.getElementById('congTrinhTieuBieu')
+var TinTuc = document.getElementById('last')
+var LienHe = document.getElementById('chatbox')
+
+TrangChu.onclick = function() {
+    window.location = '/'
+}
+
+SanPham.onclick = function() {
+    window.location = '/SanPham'
+}
+
+BaoHanh.onclick = function() {
+    window.location = '/BaoHanh'
+}
+
+HuongDanSuDung.onclick = function() {
+    window.location = '/HuongDanSuDung'
+}
+
+CongTrinhTieuBieu.onclick = function() {
+    window.location = '/CongTrinhTieuBieu'
+}
+
+TinTuc.onclick = function() {
+    window.location = '/TinTuc'
+}
+
+LienHe.onclick = function() {
+    window.location = '/LienHe'
+}
 
 // Pagination Controls
 let currentPage = 1;
