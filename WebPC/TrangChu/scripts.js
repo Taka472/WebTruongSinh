@@ -26,11 +26,11 @@ const fecthCongTyData = async() => {
         })
         .then (() => {
             document.getElementById("footerTitle").innerText = CongTyData[0].ten
-            document.getElementById("infoDisplay").innerHTML += "<li>Trụ sở: " + CongTyData[0].diaChi;
-            document.getElementById("infoDisplay").innerHTML += "<li>Chi nhánh: " + CongTyData[0].chiNhanh;
-            document.getElementById("infoDisplay").innerHTML += "<li>Tel: " + CongTyData[0].sdt1 + " - " + CongTyData[0].sdt2 + " Hotline: " + CongTyData[0].hotline;
-            document.getElementById("infoDisplay").innerHTML += "<li>Giấy phép kinh doanh số: " + CongTyData[0].giayPhepKinhDoanh;
-            document.getElementById("infoDisplay").innerHTML += "<li>Copyright 2018 © Bản quyền thuộc về Công ty"
+            document.getElementById("infoDisplay").innerHTML += "<li style='font-size: 10;'>Trụ sở: " + CongTyData[0].diaChi;
+            document.getElementById("infoDisplay").innerHTML += "<li style='font-size: 10;'>Chi nhánh: " + CongTyData[0].chiNhanh;
+            document.getElementById("infoDisplay").innerHTML += "<li style='font-size: 10;'>Tel: " + CongTyData[0].sdt1 + " - " + CongTyData[0].sdt2 + " Hotline: " + CongTyData[0].hotline;
+            document.getElementById("infoDisplay").innerHTML += "<li style='font-size: 10;'>Giấy phép kinh doanh số: " + CongTyData[0].giayPhepKinhDoanh;
+            document.getElementById("infoDisplay").innerHTML += "<li style='font-size: 10;'>Copyright 2018 © Bản quyền thuộc về Công ty"
         })
         .catch(error => console.error('Error when fetching Cong ty Data: ' + error));
 }

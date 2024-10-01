@@ -17,8 +17,6 @@ const makeAPICall = async () => {
         .catch(err => console.error('Error when fetching Header Data:' + err))
 }
 
-
-
 // Hiển thị sản phẩm
 document.addEventListener("DOMContentLoaded", function () {
     const productList = document.getElementById("product-list");
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Hiển thị sản phẩm từ `startIndex` đến `startIndex + 6`
         for (let i = startIndex; i < Math.min(startIndex + 6, dataToDisplay.length); i++) {
             const product = dataToDisplay[i];
-        
+
             // Tạo phần tử sản phẩm
             const productCard = document.createElement("div");
             productCard.classList.add("card", "mb-2");
@@ -59,47 +57,53 @@ document.addEventListener("DOMContentLoaded", function () {
             productCard.style.margin = "10px"; // Thêm khoảng cách giữa các sản phẩm
             productCard.style.borderRadius = "10px";
             productCard.style.border = "2px solid #000";
-        
+
             const cardBody = document.createElement("div");
             cardBody.classList.add("card-body");
-        
+
             // Sử dụng flexbox để căn giữa toàn bộ nội dung theo chiều ngang và dọc
             cardBody.style.display = "flex";
             cardBody.style.flexDirection = "column"; // Sắp xếp theo chiều dọc
             cardBody.style.alignItems = "center"; // Căn giữa theo chiều ngang
-        
+
             const productImage = document.createElement("img");
             productImage.src = product.hinhAnh;
             productImage.alt = product.ten;
             productImage.classList.add("img-fluid", "rounded-start");
+            productImage.style.marginTop = "10px"
             productImage.style.width = "90%"; // Đảm bảo hình ảnh sản phẩm rộng 90% trên các thiết bị nhỏ
-        
-            const productName = document.createElement("h5");
+
+            const productName = document.createElement("h4");
             productName.classList.add("card-title", "mb-0");
+            productName.style.marginTop = "10px";
+            productName.style.marginBottom = "10px";
             productName.style.color = "#009DCE";
             productName.style.textAlign = "center"; // Căn giữa tên sản phẩm theo chiều ngang
             productName.textContent = product.ten;
-        
+
             const productPrice = document.createElement("p");
             productPrice.classList.add("card-text", "mb-0");
             productPrice.style.color = "red";
+            productPrice.style.marginTop = "10px";
+            productPrice.style.marginTop = "10px";
             productPrice.style.fontWeight = "bold";
             productPrice.style.textAlign = "center"; // Căn giữa giá sản phẩm theo chiều ngang
             productPrice.textContent = "Giá: Liên hệ";
-        
+
             cardBody.appendChild(productImage);
             cardBody.appendChild(productName);
             cardBody.appendChild(productPrice);
             productCard.appendChild(cardBody);
             productList.appendChild(productCard);
         }
-        
+
         // Cập nhật kiểu của productList để hiển thị sản phẩm theo hàng ngang
         productList.style.display = "flex";
         productList.style.flexWrap = "wrap"; // Cho phép gói (wrap) các sản phẩm thành nhiều hàng
-        productList.style.justifyContent = "space-between"; // Tạo khoảng cách đều giữa các sản phẩm
+        //productList.style.marginLeft = "20px"
+        productList.style.justifyContent = "center";
         productList.style.marginTop = "10px";
-        
+
         // Cập nhật trạng thái nút phân trang
         updatePaginationButtons();
     }
@@ -186,6 +190,30 @@ close.onclick = function () {
     sideMenu.style.width = '0%'
 }
 
-// hiển thị sản phẩm
+// MENU ẩn
+
+// Mở hoặc đóng menu khi nhấn vào nút menu
+document.getElementById("menu").addEventListener("click", function(event) {
+    event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
+    var sideMenu = document.getElementById("sideMenu");
+    
+    // Kiểm tra trạng thái của menu
+    if (sideMenu.classList.contains("open")) {
+        sideMenu.classList.remove("open"); // Đóng menu nếu nó đang mở
+    } else {
+        sideMenu.classList.add("open"); // Mở menu khi nhấn vào
+    }
+});
+
+// Đóng menu nếu nhấn bên ngoài menu
+document.addEventListener("click", function(event) {
+    var sideMenu = document.getElementById("sideMenu");
+    var menuIcon = document.getElementById("menu");
+    
+    // Kiểm tra nếu nhấn không phải trong menu hoặc menuIcon, thì đóng menu
+    if (!sideMenu.contains(event.target) && !menuIcon.contains(event.target)) {
+        sideMenu.classList.remove("open");
+    }
+});
 
 
