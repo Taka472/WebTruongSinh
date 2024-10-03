@@ -72,24 +72,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
-    border-top: black solid 1px;
+    margin-top: 20px; 
 }
 
 #footer {
-    height: 300px;
-    width: 100%;
-    background-color: #00C2FF;
-    color: white;
+    height: 220px;
+    width: 98.7%;
+    background-color: #ccccff;
     font-weight: bold;
     font-family: Inter;
-    font-size: 20px;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 150px;
+    gap: 90px;
+    padding-left: 15px;
+    margin-top: 20px;
+    padding-top: 20px
 }
 
 #navigation {
@@ -184,8 +184,8 @@ li + li {
 
 #button {
     width: 100%;
-    height: 55px;
-    background-color: #D70000;
+    height: 45px;
+    background-color: #00004d;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -195,7 +195,9 @@ li + li {
 #button > #first {
     font-size: 18px;
     font-size: 1.1vw;
+    color: #00C2FF;
     font-family: Inter;
+    font-weight: bold;
     padding-right: 40px;
     padding-left: 40px;
     border-right: white solid 1px;
@@ -227,4 +229,45 @@ li + li {
 #button > #congTrinhTieuBieu {
     font-weight: bold;
     color: #00C2FF;
+}
+
+#sanPham:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#chungNhan:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#huongDanSuDung:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#baoHanh:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#first:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#last:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#congTrinhTieuBieu:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#chatbox {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
 }
