@@ -40,8 +40,8 @@ body {
 #footer {
     height: 38vw;
     width: 98.7%;
-    background-color: #00C2FF;
-    color: white;
+    background-color: #ccccff;
+    color: #000;
     font-family: Inter;
     display: flex;
     flex-direction: row;
@@ -198,7 +198,7 @@ th, td {
     position: fixed;
     top: 0;
     left: -250px;        
-    background-color: firebrick;
+    background-color: #00004d;
     padding-top: 60px;
     transition: 0.3s;    
     z-index: 1000;
