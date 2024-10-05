@@ -18,156 +18,156 @@ const port = 3001;
 app.use(cors())
 app.use(express.json())
 
-// connection.connect((err) => {
-//     if (err) {
-//         console.error("Connection error " + err.stack)
-//         return
-//     }
-//     console.log("Connection to MySQL " + connection.threadId)
-// })
+connection.connect((err) => {
+    if (err) {
+        console.error("Connection error " + err.stack)
+        return
+    }
+    console.log("Connection to MySQL " + connection.threadId)
+})
 
 app.get('/api/getHeaderData', (req, res) => {
-    sql.connect(config, function(err) {
-        if (err) console.log(err);
-        else {
-            new sql.Request().query("select * from HeaderData", (err, result) => {
-                if (err) {
-                    res.status(500).send(err);
-                }
-                else {
-                    res.status(200).send(result.recordset);
-                }
-            })
-        }
-    })
-    // connection.query("select * from HeaderData", (errors, results, fields) => {
-    //     if (errors) {
-    //         console.error('Error executing query:', errors);
-    //         res.status(500).send('Error fetching data');
-    //         return;
+    // sql.connect(config, function(err) {
+    //     if (err) console.log(err);
+    //     else {
+    //         new sql.Request().query("select * from HeaderData", (err, result) => {
+    //             if (err) {
+    //                 res.status(500).send(err);
+    //             }
+    //             else {
+    //                 res.status(200).send(result.recordset);
+    //             }
+    //         })
     //     }
-    //     res.status(200).json(results);
     // })
+    connection.query("select * from HeaderData", (errors, results, fields) => {
+        if (errors) {
+            console.error('Error executing query:', errors);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.status(200).json(results);
+    })
 })
 
 app.get('/api/getCongTyData', (req, res) => {
-    sql.connect(config, function(err) {
-        if (err) console.log(err);
-        else {
-            new sql.Request().query('select * from CongTyData', (err, result) => {
-                if (err) {
-                    res.status(500).send(err);
-                }
-                else {
-                    res.status(200).send(result.recordset);
-                }
-            })
-        }
-    })
-    // connection.query("select * from CongTyData", (errors, results, fields) => {
-    //     if (errors) {
-    //         console.error('Error executing query:', errors);
-    //         res.status(500).send('Error fetching data');
-    //         return;
+    // sql.connect(config, function(err) {
+    //     if (err) console.log(err);
+    //     else {
+    //         new sql.Request().query('select * from CongTyData', (err, result) => {
+    //             if (err) {
+    //                 res.status(500).send(err);
+    //             }
+    //             else {
+    //                 res.status(200).send(result.recordset);
+    //             }
+    //         })
     //     }
-    //     res.status(200).json(results);
     // })
+    connection.query("select * from CongTyData", (errors, results, fields) => {
+        if (errors) {
+            console.error('Error executing query:', errors);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.status(200).json(results);
+    })
 })
 
 app.get('/api/getChungNhanData', (req, res) => {
-    sql.connect(config, function(err) {
-        if (err) console.log(err);
-        else {
-            new sql.Request().query('select * from ChungNhanData', (err, result) => {
-                if (err) {
-                    res.status(500).send(err);
-                }
-                else {
-                    res.status(200).send(result.recordset);
-                }
-            })
-        }
-    })
-    // connection.query("select * from ChungNhanData", (errors, results, fields) => {
-    //     if (errors) {
-    //         console.error('Error executing query:', errors);
-    //         res.status(500).send('Error fetching data');
-    //         return;
+    // sql.connect(config, function(err) {
+    //     if (err) console.log(err);
+    //     else {
+    //         new sql.Request().query('select * from ChungNhanData', (err, result) => {
+    //             if (err) {
+    //                 res.status(500).send(err);
+    //             }
+    //             else {
+    //                 res.status(200).send(result.recordset);
+    //             }
+    //         })
     //     }
-    //     res.status(200).json(results);
     // })
+    connection.query("select * from ChungNhanData", (errors, results, fields) => {
+        if (errors) {
+            console.error('Error executing query:', errors);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.status(200).json(results);
+    })
 })
 
 app.get('/api/getCongTrinhTieuBieu', (req, res) => {
-    sql.connect(config, function(err) {
-        if (err) console.log(err)
-        else {
-            new sql.Request().query('select * from CongTrinhTieuBieu', (err, result) => {
-                if (err) {
-                    res.status(500).send(err);
-                }
-                else {
-                    res.status(200).send(result.recordset)
-                }
-            })
-        }
-    })
-    // connection.query("select * from CongTrinhTieuBieu", (errors, results, fields) => {
-    //     if (errors) {
-    //         console.error('Error executing query:', errors);
-    //         res.status(500).send('Error fetching data');
-    //         return;
+    // sql.connect(config, function(err) {
+    //     if (err) console.log(err)
+    //     else {
+    //         new sql.Request().query('select * from CongTrinhTieuBieu', (err, result) => {
+    //             if (err) {
+    //                 res.status(500).send(err);
+    //             }
+    //             else {
+    //                 res.status(200).send(result.recordset)
+    //             }
+    //         })
     //     }
-    //     res.status(200).json(results);
     // })
+    connection.query("select * from CongTrinhTieuBieu", (errors, results, fields) => {
+        if (errors) {
+            console.error('Error executing query:', errors);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.status(200).json(results);
+    })
 })
 
 app.get('/api/getSanPhamData', (req, res) => {
-    sql.connect(config, function(err) {
-        if (err) console.log(err)
-        else {
-            new sql.Request().query('select * from SanPhamData', (err, result) => {
-                if (err) {
-                    res.status(500).send(err);
-                }
-                else {
-                    res.status(200).send(result.recordset)
-                }
-            })
-        }
-    })
-    // connection.query("select * from SanPhamData", (errors, results, fields) => {
-    //     if (errors) {
-    //         console.error('Error executing query:', errors);
-    //         res.status(500).send('Error fetching data');
-    //         return;
+    // sql.connect(config, function(err) {
+    //     if (err) console.log(err)
+    //     else {
+    //         new sql.Request().query('select * from SanPhamData', (err, result) => {
+    //             if (err) {
+    //                 res.status(500).send(err);
+    //             }
+    //             else {
+    //                 res.status(200).send(result.recordset)
+    //             }
+    //         })
     //     }
-    //     res.status(200).json(results);
     // })
+    connection.query("select * from SanPhamData", (errors, results, fields) => {
+        if (errors) {
+            console.error('Error executing query:', errors);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.status(200).json(results);
+    })
 })
 
 app.get('/api/getTinTucData', (req, res) => {
-    sql.connect(config, function(err) {
-        if (err) console.log(err)
-        else {
-            new sql.Request().query('select * from TinTucData', (err, result) => {
-                if (err) {
-                    res.status(500).send(err);
-                }
-                else {
-                    res.status(200).send(result.recordset)
-                }
-            })
-        }
-    })
-    // connection.query("select * from TinTucData", (errors, results, fields) => {
-    //     if (errors) {
-    //         console.error('Error executing query:', errors);
-    //         res.status(500).send('Error fetching data');
-    //         return;
+    // sql.connect(config, function(err) {
+    //     if (err) console.log(err)
+    //     else {
+    //         new sql.Request().query('select * from TinTucData', (err, result) => {
+    //             if (err) {
+    //                 res.status(500).send(err);
+    //             }
+    //             else {
+    //                 res.status(200).send(result.recordset)
+    //             }
+    //         })
     //     }
-    //     res.status(200).json(results);
     // })
+    connection.query("select * from TinTucData", (errors, results, fields) => {
+        if (errors) {
+            console.error('Error executing query:', errors);
+            res.status(500).send('Error fetching data');
+            return;
+        }
+        res.status(200).json(results);
+    })
 })
 
 app.put('/api/putForm', rateLimitConfig, (req, res) => {
@@ -274,18 +274,26 @@ app.put('/api/insertHeaderData', (req, res) => {
 })
 
 app.get('/api/getBaoHanhData', (req, res) => {
-    sql.connect(config, function(err) {
-        if (err) console.log(err)
-        else {
-            new sql.Request().query('select ten, baoHanh from SanPhamData where baoHanh is not null', (err, result) => {
-                if (err) {
-                    res.status(500).send(err);
-                }
-                else {
-                    res.status(200).send(result.recordset)
-                }
-            })
+    // sql.connect(config, function(err) {
+    //     if (err) console.log(err)
+    //     else {
+    //         new sql.Request().query('select ten, baoHanh from SanPhamData where baoHanh is not null', (err, result) => {
+    //             if (err) {
+    //                 res.status(500).send(err);
+    //             }
+    //             else {
+    //                 res.status(200).send(result.recordset)
+    //             }
+    //         })
+    //     }
+    // })
+    connection.query("select select ten, baoHanh from SanPhamData where baoHanh is not null", (errors, results, fields) => {
+        if (errors) {
+            console.error('Error executing query:', errors);
+            res.status(500).send('Error fetching data');
+            return;
         }
+        res.status(200).json(results);
     })
 })
 
